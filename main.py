@@ -143,8 +143,16 @@ class State:
             states.append(state)
         return states
 
-    def evaluate(self):
-        pass
+    def evaluate(self, jt):
+        if self.h0 == 3:
+            white_win, black_win = self.solved(1), self.solved(2)
+            if white_win and black_win:
+                return 0
+            elif white_win and jt == 1 or black_win and jt == 2:
+                return 1
+            else:
+                return 0
+        return 0
 
 
 if __name__ == '__main__':
