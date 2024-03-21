@@ -152,12 +152,19 @@ class State:
             elif white_win and jt == 1 or black_win and jt == 2:
                 return 1
             else:
-                return 0
+                return -1
+        elif self.h0 == 2:
+            return max(node[1].evaluate(jt) for node in self.state_tree_depth_1())
         return 0
 
 
 if __name__ == '__main__':
     a = State()
+    a.h0 = 1
+    a.h = [[0, 2, 0, 2],
+           [2, 0, 0, 1],
+           [0, 0, 0, 2],
+           [0, 0, 1, 1]]
     ai_mode = 1
     while a.h0 != 3:
         a0 = deepcopy(a)

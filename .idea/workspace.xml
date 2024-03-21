@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90245489-f813-4471-bbd8-9c66a5abff95" name="Changes" comment="very basic evaluate function">
+    <list default="true" id="90245489-f813-4471-bbd8-9c66a5abff95" name="Changes" comment="very basic agent (random moves unless win in 1)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -160,7 +160,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710950595313</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="very basic agent (random moves unless win in 1)">
+      <option name="closed" value="true" />
+      <created>1711035091414</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1711035091414</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -178,6 +186,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="initial commit" />
     <MESSAGE value="very basic evaluate function" />
-    <option name="LAST_COMMIT_MESSAGE" value="very basic evaluate function" />
+    <MESSAGE value="very basic agent (random moves unless win in 1)" />
+    <option name="LAST_COMMIT_MESSAGE" value="very basic agent (random moves unless win in 1)" />
   </component>
 </project>
