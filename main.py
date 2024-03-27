@@ -6,12 +6,12 @@ from minimax import minimax
 
 if __name__ == '__main__':
     a = State()
-    # a.h0 = 1
-    # a.h = [[0, 2, 0, 0],
-    #        [2, 0, 0, 1],
-    #        [0, 0, 0, 2],
-    #        [0, 0, 1, 1]]
-    #
+    a.h0 = 1
+    a.h = [[0, 2, 0, 0],
+           [2, 0, 0, 1],
+           [0, 0, 0, 2],
+           [0, 0, 1, 1]]
+
     ai_mode = 1
     print(minimax(a, 3, 1))
     while a.h0 != 3:
