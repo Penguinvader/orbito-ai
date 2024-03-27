@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90245489-f813-4471-bbd8-9c66a5abff95" name="Changes" comment="agent slides if it leads to winning move" />
+    <list default="true" id="90245489-f813-4471-bbd8-9c66a5abff95" name="Changes" comment="removed test case">
+      <change afterPath="$PROJECT_DIR$/state.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -173,7 +177,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711038356890</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="removed test case">
+      <option name="closed" value="true" />
+      <created>1711038445974</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1711038445974</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -193,6 +205,7 @@
     <MESSAGE value="very basic evaluate function" />
     <MESSAGE value="very basic agent (random moves unless win in 1)" />
     <MESSAGE value="agent slides if it leads to winning move" />
-    <option name="LAST_COMMIT_MESSAGE" value="agent slides if it leads to winning move" />
+    <MESSAGE value="removed test case" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed test case" />
   </component>
 </project>
