@@ -22,7 +22,7 @@ if __name__ == '__main__':
             player = 'white' if a.jt == 1 else 'black'
             print(f'Player {player} {'move' if a.h0 == 1 else 'placement'} coordinates (row column):')
             if player == 'white' and ai_mode == 1:
-                mm = minimax(a, 4, 1)
+                mm = minimax(a, 2, 1)
                 move = mm[1]
                 print(mm)
                 if move == 'skip':

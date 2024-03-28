@@ -2,10 +2,10 @@ from state import State
 
 
 def minimax(state: State, depth: int, jt: int):
-    if depth == 0 or state.h0 == 3:
+    if depth == 0 and state.h0 != 1 or state.h0 == 3:
         return state.evaluate(jt), state.last_move
 
-    available_states = [(s[1], minimax(s[1], depth-1, jt)) for s in state.state_tree_depth_1()]
+    available_states = [(s[1], minimax(s[1], depth if state.h0 == 1 else depth-1, jt)) for s in state.state_tree_depth_1()]
 
     if state.jt == jt:
         best = max(available_states, key=lambda s: s[1][0])
