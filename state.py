@@ -44,7 +44,7 @@ class State:
         self.h = rotated
 
     def up(self, i, j):
-        if self.h[i][j] == 3 - self.jt and self.h[i - 1][j] == 0 and self.h0 == 1:
+        if self.h[i][j] == 3 - self.jt and self.h[i - 1][j] == 0 and self.h0 == 1 and i-1 >= 0:
             self.h[i - 1][j] = self.h[i][j]
             self.h[i][j] = 0
             self.h0 = 2
@@ -62,7 +62,7 @@ class State:
             raise InvalidMoveError
 
     def left(self, i, j):
-        if self.h[i][j] == 3 - self.jt and self.h[i][j - 1] == 0 and self.h0 == 1:
+        if self.h[i][j] == 3 - self.jt and self.h[i][j - 1] == 0 and self.h0 == 1 and j-1 >= 0:
             self.h[i][j - 1] = self.h[i][j]
             self.h[i][j] = 0
             self.h0 = 2
@@ -152,14 +152,21 @@ class State:
         return states
 
     def evaluate(self, jt):
+        value = 0.0
         if self.h0 == 3:
             white_win, black_win = self.solved(1), self.solved(2)
             if white_win and black_win:
-                return 0
+                value = 0.0
             elif white_win and jt == 1 or black_win and jt == 2:
-                return 1
+                value = 1.0
             else:
-                return -1
-        # elif self.h0 == 2:
-        #     return max(node[1].evaluate(jt) for node in self.state_tree_depth_1())
-        return 0
+                value = -1.0
+        # else:
+        #     for row in range(4):
+        #         for column in range(3):
+        #             current, nxt = self.h[row][column], self.h[row][column + 1]
+        #             if current == jt and current == nxt:
+        #                 value += 0.001
+        #             elif current == 3-jt and current == nxt:
+        #                 value -= 0.001
+        return value
