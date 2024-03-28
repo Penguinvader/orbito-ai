@@ -13,7 +13,6 @@ if __name__ == '__main__':
            [0, 0, 1, 1]]
 
     ai_mode = 1
-    print(minimax(a, 3, 1))
     while a.h0 != 3:
         a0 = deepcopy(a)
         a.print_grid()
@@ -23,12 +22,9 @@ if __name__ == '__main__':
             player = 'white' if a.jt == 1 else 'black'
             print(f'Player {player} {'move' if a.h0 == 1 else 'placement'} coordinates (row column):')
             if player == 'white' and ai_mode == 1:
-                tree = a.state_tree_depth_1()
-                shuffle(tree)
-                chosen = max(tree, key=lambda state: state[1].evaluate(1))
-                move = chosen[0]
-                print(f'AI move: {move}')
-                print(f'AI move value: {chosen[1].evaluate(1)}')
+                mm = minimax(a, 4, 1)
+                move = mm[1]
+                print(mm)
                 if move == 'skip':
                     a.skip_move()
                 else:

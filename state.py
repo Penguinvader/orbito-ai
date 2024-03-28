@@ -1,7 +1,9 @@
 from copy import deepcopy
 
+
 class InvalidMoveError(Exception):
     pass
+
 
 class State:
     rotation_matrix = [[(0, 1), (0, 2), (0, 3), (1, 3)],
@@ -13,6 +15,7 @@ class State:
         self.h0 = 2
         self.jt = 1
         self.h = [[0 for col in range(4)] for row in range(4)]
+        self.last_move = 'start'
 
     def print_grid(self):
         for row in self.h:
@@ -45,6 +48,7 @@ class State:
             self.h[i - 1][j] = self.h[i][j]
             self.h[i][j] = 0
             self.h0 = 2
+            self.last_move = f'up {i} {j}'
         else:
             raise InvalidMoveError
 
@@ -53,6 +57,7 @@ class State:
             self.h[i + 1][j] = self.h[i][j]
             self.h[i][j] = 0
             self.h0 = 2
+            self.last_move = f'down {i} {j}'
         else:
             raise InvalidMoveError
 
@@ -61,6 +66,7 @@ class State:
             self.h[i][j - 1] = self.h[i][j]
             self.h[i][j] = 0
             self.h0 = 2
+            self.last_move = f'left {i} {j}'
         else:
             raise InvalidMoveError
 
@@ -69,12 +75,14 @@ class State:
             self.h[i][j + 1] = self.h[i][j]
             self.h[i][j] = 0
             self.h0 = 2
+            self.last_move = f'right {i} {j}'
         else:
             raise InvalidMoveError
 
     def skip_move(self):
         if self.h0 == 1:
             self.h0 = 2
+            self.last_move = f'skip'
         else:
             raise InvalidMoveError
 
@@ -84,11 +92,13 @@ class State:
             self.rotate()
             self.h0 = 3 if self.solved(1) or self.solved(2) else 1
             self.jt = 3 - self.jt
+            self.last_move = f'place {i} {j}'
         else:
             raise InvalidMoveError
 
     def full(self):
         self.h0 = 3
+        self.last_move = f'full'
         for n in range(5):
             self.rotate(),
             if self.solved(1) or self.solved(2):
@@ -150,6 +160,6 @@ class State:
                 return 1
             else:
                 return -1
-        elif self.h0 == 2:
-            return max(node[1].evaluate(jt) for node in self.state_tree_depth_1())
+        # elif self.h0 == 2:
+        #     return max(node[1].evaluate(jt) for node in self.state_tree_depth_1())
         return 0
