@@ -1,16 +1,17 @@
 from copy import deepcopy
-from random import shuffle
+
+import evaluators
 from state import State, InvalidMoveError
 from minimax import minimax
 
 
 if __name__ == '__main__':
     a = State()
-    a.h0 = 1
-    a.h = [[0, 2, 0, 0],
-           [2, 0, 0, 1],
-           [1, 0, 0, 2],
-           [0, 0, 1, 0]]
+    # a.h0 = 1
+    # a.h = [[0, 2, 0, 0],
+    #        [2, 0, 0, 1],
+    #        [1, 0, 0, 2],
+    #        [0, 0, 1, 0]]
 
     ai_mode = 1
     while a.h0 != 3:
@@ -22,7 +23,7 @@ if __name__ == '__main__':
             player = 'white' if a.jt == 1 else 'black'
             print(f'Player {player} {'move' if a.h0 == 1 else 'placement'} coordinates (row column):')
             if player == 'white' and ai_mode == 1:
-                mm = minimax(a, 2, 1)
+                mm = minimax(a, 2, 1, evaluator=evaluators.three_in_a_row)
                 move = mm[1]
                 print(mm)
                 if move == 'skip':
@@ -56,4 +57,4 @@ if __name__ == '__main__':
                         a.skip_move()
     a.print_grid()
     white_win, black_win = a.solved(1), a.solved(2)
-    print('draw' if white_win and black_win else 'white wins' if white_win else 'black wins' if black_win else '?????')
+    print('draw' if white_win and black_win else 'white wins' if white_win else 'black wins' if black_win else 'draw')

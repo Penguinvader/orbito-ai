@@ -1,5 +1,7 @@
 from copy import deepcopy
 
+import evaluators
+
 
 class InvalidMoveError(Exception):
     pass
@@ -100,7 +102,8 @@ class State:
         self.h0 = 3
         self.last_move = f'full'
         for n in range(5):
-            self.rotate(),
+            self.rotate()
+            self.print_grid()
             if self.solved(1) or self.solved(2):
                 return
 
@@ -151,22 +154,5 @@ class State:
             states.append((move, state))
         return states
 
-    def evaluate(self, jt):
-        value = 0.0
-        if self.h0 == 3:
-            white_win, black_win = self.solved(1), self.solved(2)
-            if white_win and black_win:
-                value = 0.0
-            elif white_win and jt == 1 or black_win and jt == 2:
-                value = 1.0
-            else:
-                value = -1.0
-        # else:
-        #     for row in range(4):
-        #         for column in range(3):
-        #             current, nxt = self.h[row][column], self.h[row][column + 1]
-        #             if current == jt and current == nxt:
-        #                 value += 0.001
-        #             elif current == 3-jt and current == nxt:
-        #                 value -= 0.001
-        return value
+    def evaluate(self, jt, evaluator=evaluators.win):
+        return evaluator(self, jt)
