@@ -143,7 +143,7 @@ class State:
             case 'place':
                 self.place(i, j)
 
-    def state_tree_depth_1(self):
+    def child_nodes(self):
         states = []
         for move in self.legal_moves():
             state = deepcopy(self)

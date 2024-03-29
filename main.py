@@ -2,7 +2,7 @@ from copy import deepcopy
 
 import evaluators
 from state import State, InvalidMoveError
-from minimax import minimax
+import minimax
 
 
 if __name__ == '__main__':
@@ -23,7 +23,7 @@ if __name__ == '__main__':
             player = 'white' if a.jt == 1 else 'black'
             print(f'Player {player} {'move' if a.h0 == 1 else 'placement'} coordinates (row column):')
             if player == 'white' and ai_mode == 1:
-                mm = minimax(a, 2, 1, evaluator=evaluators.three_in_a_row)
+                mm = minimax.minimax_ab(a, 2, 1, evaluator=evaluators.three_in_a_row)
                 move = mm[1]
                 print(mm)
                 if move == 'skip':
