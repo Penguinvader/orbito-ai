@@ -3,15 +3,16 @@ from copy import deepcopy
 import evaluators
 from state import State, InvalidMoveError
 import minimax
+import numpy as np
 
 
 if __name__ == '__main__':
     a = State()
-    # a.h0 = 1
-    # a.h = [[0, 2, 2, 0],
-    #        [2, 2, 0, 2],
-    #        [2, 2, 0, 2],
-    #        [0, 2, 2, 0]]
+    a.h0 = 1
+    a.h = [[0, 2, 2, 0],
+           [2, 2, 0, 2],
+           [2, 2, 0, 2],
+           [0, 2, 0, 0]]
     # print(evaluators.defensive_three(a, 1))
 
     ai_mode = 1
@@ -24,7 +25,7 @@ if __name__ == '__main__':
             player = 'white' if a.jt == 1 else 'black'
             print(f'Player {player} {'move' if a.h0 == 1 else 'placement'} coordinates (row column):')
             if player == 'white' and ai_mode == 1:
-                mm = minimax.minimax(a, 2, 1, evaluator=evaluators.defensive_three)
+                mm = minimax.minimax(a, 2, 1, evaluator=evaluators.two_in_a_row)
                 move = mm[1]
                 print(mm)
                 if move == 'skip':

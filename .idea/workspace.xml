@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90245489-f813-4471-bbd8-9c66a5abff95" name="Changes" comment="alpha beta pruning (bugged)">
+    <list default="true" id="90245489-f813-4471-bbd8-9c66a5abff95" name="Changes" comment="alpha beta pruning fixed maybe">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evaluators.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluators.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/minimax.py" beforeDir="false" afterPath="$PROJECT_DIR$/minimax.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/state.py" beforeDir="false" afterPath="$PROJECT_DIR$/state.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -256,7 +259,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711732526290</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="alpha beta pruning fixed maybe">
+      <option name="closed" value="true" />
+      <created>1711734119487</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1711734119487</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -283,6 +294,7 @@
     <MESSAGE value="fix wrap around" />
     <MESSAGE value="added evaluators" />
     <MESSAGE value="alpha beta pruning (bugged)" />
-    <option name="LAST_COMMIT_MESSAGE" value="alpha beta pruning (bugged)" />
+    <MESSAGE value="alpha beta pruning fixed maybe" />
+    <option name="LAST_COMMIT_MESSAGE" value="alpha beta pruning fixed maybe" />
   </component>
 </project>

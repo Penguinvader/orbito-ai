@@ -1,5 +1,5 @@
 from copy import deepcopy
-
+import numpy as np
 import evaluators
 
 
@@ -8,15 +8,15 @@ class InvalidMoveError(Exception):
 
 
 class State:
-    rotation_matrix = [[(0, 1), (0, 2), (0, 3), (1, 3)],
-                       [(0, 0), (1, 2), (2, 2), (2, 3)],
-                       [(1, 0), (1, 1), (2, 1), (3, 3)],
-                       [(2, 0), (3, 0), (3, 1), (3, 2)]]
+    rotation_matrix = np.array([[(0, 1), (0, 2), (0, 3), (1, 3)],
+                                [(0, 0), (1, 2), (2, 2), (2, 3)],
+                                [(1, 0), (1, 1), (2, 1), (3, 3)],
+                                [(2, 0), (3, 0), (3, 1), (3, 2)]])
 
     def __init__(self):
         self.h0 = 2
         self.jt = 1
-        self.h = [[0 for col in range(4)] for row in range(4)]
+        self.h = np.zeros((4, 4))
         self.last_move = 'start'
 
     def print_grid(self):
@@ -46,7 +46,7 @@ class State:
         self.h = rotated
 
     def up(self, i, j):
-        if self.h[i][j] == 3 - self.jt and self.h[i - 1][j] == 0 and self.h0 == 1 and i-1 >= 0:
+        if self.h[i][j] == 3 - self.jt and self.h[i - 1][j] == 0 and self.h0 == 1 and i - 1 >= 0:
             self.h[i - 1][j] = self.h[i][j]
             self.h[i][j] = 0
             self.h0 = 2
@@ -64,7 +64,7 @@ class State:
             raise InvalidMoveError
 
     def left(self, i, j):
-        if self.h[i][j] == 3 - self.jt and self.h[i][j - 1] == 0 and self.h0 == 1 and j-1 >= 0:
+        if self.h[i][j] == 3 - self.jt and self.h[i][j - 1] == 0 and self.h0 == 1 and j - 1 >= 0:
             self.h[i][j - 1] = self.h[i][j]
             self.h[i][j] = 0
             self.h0 = 2
