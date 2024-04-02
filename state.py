@@ -132,7 +132,7 @@ class State:
                 for move in ['up', 'down', 'left', 'right', 'place']:
                     try:
                         state = deepcopy(a0)
-                        state.make_move(move)
+                        state.make_move_inside(move, i, j)
                         moves.append(f'{move} {i} {j}')
                     except (InvalidMoveError, IndexError):
                         # print(move, i, j)
@@ -165,10 +165,7 @@ class State:
         states = []
         for move in self.legal_moves():
             state = deepcopy(self)
-            if move == 'skip':
-                state.skip_move()
-            else:
-                state.make_move(*move.split())
+            state.make_move(move)
             states.append((move, state))
         return states
 
