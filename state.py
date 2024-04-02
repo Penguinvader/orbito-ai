@@ -99,13 +99,16 @@ class State:
             raise InvalidMoveError
 
     def full(self):
-        self.h0 = 3
-        self.last_move = f'full'
-        for n in range(5):
-            self.rotate()
-            self.print_grid()
-            if self.solved(1) or self.solved(2):
-                return
+        if 0 not in [n for row in self.h for n in row] and self.h0 == 1:
+            self.h0 = 3
+            self.last_move = f'full'
+            for n in range(5):
+                self.rotate()
+                self.print_grid()
+                if self.solved(1) or self.solved(2):
+                    return
+        else:
+            raise InvalidMoveError
 
     def legal_moves(self):
         a0 = deepcopy(self)
@@ -117,19 +120,34 @@ class State:
         except InvalidMoveError:
             # print('skip')
             pass
+        try:
+            state = deepcopy(a0)
+            state.full()
+            moves.append('full')
+        except InvalidMoveError:
+            # print('full')
+            pass
         for i in range(4):
             for j in range(4):
                 for move in ['up', 'down', 'left', 'right', 'place']:
                     try:
                         state = deepcopy(a0)
-                        state.make_move(move, i, j)
+                        state.make_move(move)
                         moves.append(f'{move} {i} {j}')
                     except (InvalidMoveError, IndexError):
                         # print(move, i, j)
                         pass
         return moves
 
-    def make_move(self, move, i, j):
+    def make_move(self, move):
+        if move == 'skip':
+            self.skip_move()
+        elif move == 'full':
+            self.full()
+        else:
+            self.make_move_inside(*move.split())
+
+    def make_move_inside(self, move, i, j):
         i, j = int(i), int(j)
         match move:
             case 'up':

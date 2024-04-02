@@ -28,10 +28,7 @@ if __name__ == '__main__':
                 mm = minimax.minimax(a, 2, 1, evaluator=evaluators.two_in_a_row)
                 move = mm[1]
                 print(mm)
-                if move == 'skip':
-                    a.skip_move()
-                else:
-                    a.make_move(*move.split())
+                a.make_move(move)
             else:
                 try:
                     i, j = (int(n) for n in input().split())
