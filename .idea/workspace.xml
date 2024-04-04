@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90245489-f813-4471-bbd8-9c66a5abff95" name="Changes" comment="alpha beta pruning fixed maybe">
-      <change afterPath="$PROJECT_DIR$/MCTS.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node.py" afterDir="false" />
+    <list default="true" id="90245489-f813-4471-bbd8-9c66a5abff95" name="Changes" comment="started working on mcts">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/state.py" beforeDir="false" afterPath="$PROJECT_DIR$/state.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -275,7 +271,23 @@
       <option name="project" value="LOCAL" />
       <updated>1711992980341</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="started working on mcts">
+      <option name="closed" value="true" />
+      <created>1712066892865</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1712066892865</updated>
+    </task>
+    <task id="LOCAL-00018" summary="started working on mcts">
+      <option name="closed" value="true" />
+      <created>1712067064412</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1712067064412</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -303,6 +315,7 @@
     <MESSAGE value="added evaluators" />
     <MESSAGE value="alpha beta pruning (bugged)" />
     <MESSAGE value="alpha beta pruning fixed maybe" />
-    <option name="LAST_COMMIT_MESSAGE" value="alpha beta pruning fixed maybe" />
+    <MESSAGE value="started working on mcts" />
+    <option name="LAST_COMMIT_MESSAGE" value="started working on mcts" />
   </component>
 </project>

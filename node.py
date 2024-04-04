@@ -52,3 +52,20 @@ class Node:
         self.children.append(child)
         return child
 
+    def simulate(self):
+        value, is_terminal = self.state.evaluate(1), self.state.h0 == 3
+
+        if is_terminal:
+            return value
+
+        rollout_state = deepcopy(self.state)
+        while True:
+            valid_moves = self.state.legal_moves()
+            move = random.choice(valid_moves)
+            rollout_state.make_move(move)
+            value, is_terminal = self.state.evaluate(1), self.state.h0 == 3
+            if is_terminal:
+                return value
+
+    def backpropagate(self, value):
+        pass
