@@ -25,7 +25,7 @@ class MCTS:
 
             node.backpropagate(value)
 
-        action_probs = np.array([child.visit_count for child in self.children])
+        action_probs = np.array([child.visit_count for child in root.children], np.float64)
         action_probs /= np.sum(action_probs)
         return action_probs
 

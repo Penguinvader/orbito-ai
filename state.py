@@ -82,7 +82,7 @@ class State:
             raise InvalidMoveError
 
     def skip_move(self):
-        if self.h0 == 1:
+        if self.h0 == 1 and 0 in [n for row in self.h for n in row]:
             self.h0 = 2
             self.last_move = f'skip'
         else:
@@ -104,7 +104,7 @@ class State:
             self.last_move = f'full'
             for n in range(5):
                 self.rotate()
-                self.print_grid()
+                # self.print_grid()
                 if self.solved(1) or self.solved(2):
                     return
         else:

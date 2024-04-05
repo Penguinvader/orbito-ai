@@ -60,10 +60,13 @@ class Node:
 
         rollout_state = deepcopy(self.state)
         while True:
-            valid_moves = self.state.legal_moves()
-            move = random.choice(valid_moves)
+            valid_moves = rollout_state.legal_moves()
+            try:
+                move = random.choice(valid_moves)
+            except IndexError:
+                print(rollout_state.h0, rollout_state.h, rollout_state.jt)
             rollout_state.make_move(move)
-            value, is_terminal = self.state.evaluate(self.state.jt), self.state.h0 == 3
+            value, is_terminal = rollout_state.evaluate(self.state.jt), rollout_state.h0 == 3
             if is_terminal:
                 return value
 

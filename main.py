@@ -16,8 +16,8 @@ if __name__ == '__main__':
     #        [0, 2, 0, 0]]
     # print(evaluators.defensive_three(a, 1))
 
-    mcts = MCTS(args={'num_searches': 10, 'C': 1.41})
-    mcts.search(a)
+    mcts = MCTS(args={'num_searches': 1000, 'C': 1.41})
+    print(mcts.search(a))
     ai_mode = 1
     while a.h0 != 3:
         a0 = deepcopy(a)
