@@ -1,6 +1,7 @@
 from copy import deepcopy
 
 import evaluators
+from MCTS import MCTS
 from state import State, InvalidMoveError
 import minimax
 import numpy as np
@@ -8,13 +9,15 @@ import numpy as np
 
 if __name__ == '__main__':
     a = State()
-    a.h0 = 1
-    a.h = [[0, 2, 2, 0],
-           [2, 2, 0, 2],
-           [2, 2, 0, 2],
-           [0, 2, 0, 0]]
+    # a.h0 = 1
+    # a.h = [[0, 2, 2, 0],
+    #        [2, 2, 0, 2],
+    #        [2, 2, 0, 2],
+    #        [0, 2, 0, 0]]
     # print(evaluators.defensive_three(a, 1))
 
+    mcts = MCTS(args={'num_searches': 10, 'C': 1.41})
+    mcts.search(a)
     ai_mode = 1
     while a.h0 != 3:
         a0 = deepcopy(a)

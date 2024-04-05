@@ -1,3 +1,5 @@
+import numpy as np
+
 import evaluators
 from node import Node
 
@@ -15,12 +17,15 @@ class MCTS:
             while node.is_fully_expanded():
                 node = node.select()
 
-            value, is_terminal = node.state.evaluate(1), node.state.h0 == 3
+            value, is_terminal = node.state.evaluate(node.state.jt), node.state.h0 == 3
 
             if not is_terminal:
                 node = node.expand()
-                # expansion
-                # simulation
-            # backpropagation
+                value = node.simulate()
 
-        # return visit_counts
+            node.backpropagate(value)
+
+        action_probs = np.array([child.visit_count for child in self.children])
+        action_probs /= np.sum(action_probs)
+        return action_probs
+
