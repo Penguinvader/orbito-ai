@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90245489-f813-4471-bbd8-9c66a5abff95" name="Changes" comment="AAAAAAAAAAAAA">
+    <list default="true" id="90245489-f813-4471-bbd8-9c66a5abff95" name="Changes" comment="finally something that works">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MCTS.py" beforeDir="false" afterPath="$PROJECT_DIR$/MCTS.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node.py" beforeDir="false" afterPath="$PROJECT_DIR$/node.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/state.py" beforeDir="false" afterPath="$PROJECT_DIR$/state.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -307,7 +304,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712333134354</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="finally something that works">
+      <option name="closed" value="true" />
+      <created>1712350864328</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1712350864328</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -337,7 +342,8 @@
     <MESSAGE value="alpha beta pruning fixed maybe" />
     <MESSAGE value="started working on mcts" />
     <MESSAGE value="AAAAAAAAAAAAA" />
-    <option name="LAST_COMMIT_MESSAGE" value="AAAAAAAAAAAAA" />
+    <MESSAGE value="finally something that works" />
+    <option name="LAST_COMMIT_MESSAGE" value="finally something that works" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

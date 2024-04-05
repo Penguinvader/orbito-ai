@@ -16,9 +16,7 @@ if __name__ == '__main__':
     #        [0, 2, 0, 0]]
     # print(evaluators.defensive_three(a, 1))
 
-    mcts = MCTS(args={'num_searches': 1000, 'C': 1.41})
-    print(mcts.search(a))
-    ai_mode = 1
+    ai_mode = 2
     while a.h0 != 3:
         a0 = deepcopy(a)
         a.print_grid()
@@ -31,6 +29,14 @@ if __name__ == '__main__':
                 mm = minimax.minimax(a, 2, 1, evaluator=evaluators.two_in_a_row)
                 move = mm[1]
                 print(mm)
+                a.make_move(move)
+            elif player == 'white' and ai_mode == 2:
+                mcts = MCTS(args={'num_searches': 100, 'C': 1.41})
+                mcts_probs = mcts.search(a)
+                moves = a.legal_moves()
+                print(tuple(zip(moves, mcts_probs)))
+                move = a.legal_moves()[np.argmax(mcts_probs)]
+                print(move)
                 a.make_move(move)
             else:
                 try:
