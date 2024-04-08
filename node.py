@@ -46,7 +46,7 @@ class Node:
         self.expandable_moves.remove(action)
 
         child_state = deepcopy(self.state)
-        child_state.make_move(action)
+        child_state.make_move_text(action)
 
         child = Node(self.args, child_state, parent=self, last_move=action)
         self.children.append(child)
@@ -62,7 +62,7 @@ class Node:
         while True:
             valid_moves = rollout_state.legal_moves()
             move = random.choice(valid_moves)
-            rollout_state.make_move(move)
+            rollout_state.make_move_text(move)
             value, is_terminal = rollout_state.evaluate(self.state.jt), rollout_state.h0 == 3
             if is_terminal:
                 return value

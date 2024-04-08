@@ -6,6 +6,10 @@ from MCTS import MCTS
 from state import State, InvalidMoveError
 import minimax
 import numpy as np
+import torch
+
+import torch.nn as nn
+import torch.nn.functional as F
 
 if __name__ == '__main__':
     a = State()
@@ -33,17 +37,17 @@ if __name__ == '__main__':
                         mm = minimax.minimax(a, 2, 1, evaluator=evaluators.two_in_a_row)
                         move = mm[1]
                         print(mm)
-                        a.make_move(move)
+                        a.make_move_text(move)
                     elif player == 'white' and p1_mode == 2:
                         mcts_probs = mcts.search(a)
                         print(mcts_probs)
                         move = max(mcts_probs, key=lambda pair: pair[0])[1]
                         print(move)
-                        a.make_move(move)
+                        a.make_move_text(move)
                     elif player == 'black' and p2_mode == 1:
                         move = random.choice(a.legal_moves())
                         print(move)
-                        a.make_move(move)
+                        a.make_move_text(move)
                     else:
                         try:
                             i, j = (int(n) for n in input().split())

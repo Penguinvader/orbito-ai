@@ -12,6 +12,26 @@ class State:
                                 [(0, 0), (1, 2), (2, 2), (2, 3)],
                                 [(1, 0), (1, 1), (2, 1), (3, 3)],
                                 [(2, 0), (3, 0), (3, 1), (3, 2)]])
+    moves = ('skip', 'full',
+             'place 0 0', 'place 0 1', 'place 0 2', 'place 0 3',
+             'place 1 0', 'place 1 1', 'place 1 2', 'place 1 3',
+             'place 2 0', 'place 2 1', 'place 2 2', 'place 2 3',
+             'place 3 0', 'place 3 1', 'place 3 2', 'place 3 3',
+             'up 1 0', 'up 1 1', 'up 1 2', 'up 1 3',
+             'up 2 0', 'up 2 1', 'up 2 2', 'up 2 3',
+             'up 3 0', 'up 3 1', 'up 3 2', 'up 3 3',
+             'down 0 0', 'down 0 1', 'down 0 2', 'down 0 3',
+             'down 1 0', 'down 1 1', 'down 1 2', 'down 1 3',
+             'down 2 0', 'down 2 1', 'down 2 2', 'down 2 3',
+             'left 0 1', 'left 0 2', 'left 0 3',
+             'left 1 1', 'left 1 2', 'left 1 3',
+             'left 2 1', 'left 2 2', 'left 2 3',
+             'left 3 1', 'left 3 2', 'left 3 3',
+             'right 0 0', 'right 0 1', 'right 0 2',
+             'right 1 0', 'right 1 1', 'right 1 2',
+             'right 2 0', 'right 2 1', 'right 2 2',
+             'right 3 0', 'right 3 1', 'right 3 2'
+             )
 
     def __init__(self):
         self.h0 = 2
@@ -139,7 +159,10 @@ class State:
                         pass
         return moves
 
-    def make_move(self, move):
+    def make_move(self, move_id):
+        self.make_move_text(self.moves[move_id])
+
+    def make_move_text(self, move):
         if move == 'skip':
             self.skip_move()
         elif move == 'full':
@@ -165,7 +188,7 @@ class State:
         states = []
         for move in self.legal_moves():
             state = deepcopy(self)
-            state.make_move(move)
+            state.make_move_text(move)
             states.append((move, state))
         return states
 
