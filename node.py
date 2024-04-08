@@ -38,7 +38,7 @@ class Node:
     def get_ucb(self, child):
         q_value = ((child.value_sum / child.visit_count) + 1) / 2
         if child.state.jt == 2:
-            q_value = 1 - q_value
+            q_value = 1.0 - q_value
         return q_value + self.args['C'] * math.sqrt(math.log(self.visit_count) / child.visit_count)
 
     def expand(self):
@@ -61,10 +61,7 @@ class Node:
         rollout_state = deepcopy(self.state)
         while True:
             valid_moves = rollout_state.legal_moves()
-            try:
-                move = random.choice(valid_moves)
-            except IndexError:
-                print(rollout_state.h0, rollout_state.h, rollout_state.jt)
+            move = random.choice(valid_moves)
             rollout_state.make_move(move)
             value, is_terminal = rollout_state.evaluate(self.state.jt), rollout_state.h0 == 3
             if is_terminal:
@@ -74,7 +71,7 @@ class Node:
         self.value_sum += value
         self.visit_count += 1
 
-        value = self.state.evaluate(self.state.jt)
         if self.parent is not None:
+            value = value if self.parent.state.jt == self.state.jt else -value
             self.parent.backpropagate(value)
 

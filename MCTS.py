@@ -27,5 +27,5 @@ class MCTS:
 
         action_probs = np.array([child.visit_count for child in root.children], np.float64)
         action_probs /= np.sum(action_probs)
-        return action_probs
+        return tuple(zip(action_probs, [child.last_move for child in root.children]))
 
