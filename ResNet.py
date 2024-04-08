@@ -21,8 +21,8 @@ class ResNet(nn.Module):
             nn.BatchNorm2d(32),
             nn.ReLU(),
             nn.Flatten(),
-            # h0 h jt, skip full place up down left right
-            nn.Linear(32 * (1 + 4 * 4 + 1), len(state.moves))
+            # h0 jt h, skip full place up down left right
+            nn.Linear(32 * (1 + 1 + 4 * 4), len(state.moves))
         )
 
         self.valueHead = nn.Sequential(
@@ -30,7 +30,7 @@ class ResNet(nn.Module):
             nn.BatchNorm2d(3),
             nn.ReLU(),
             nn.Flatten(),
-            nn.Linear(3 * (1 + 4 * 4 + 1), 1),
+            nn.Linear(3 * (1 + 1 + 4 * 4), 1),
             nn.Tanh()
         )
 

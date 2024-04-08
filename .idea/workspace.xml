@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90245489-f813-4471-bbd8-9c66a5abff95" name="Changes" comment="finally something that ACTUALLY works">
-      <change afterPath="$PROJECT_DIR$/ResNet.py" afterDir="false" />
+    <list default="true" id="90245489-f813-4471-bbd8-9c66a5abff95" name="Changes" comment="started neural network stuff">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ResNet.py" beforeDir="false" afterPath="$PROJECT_DIR$/ResNet.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/state.py" beforeDir="false" afterPath="$PROJECT_DIR$/state.py" afterDir="false" />
     </list>
@@ -57,7 +57,7 @@
     ]
   }
 }]]></component>
-  <component name="RunManager" selected="Python.ResNet">
+  <component name="RunManager" selected="Python.main">
     <configuration name="ResNet" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Orbito" />
       <option name="ENV_FILES" value="" />
@@ -354,7 +354,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712599678589</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="started neural network stuff">
+      <option name="closed" value="true" />
+      <created>1712602407819</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1712602407819</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -386,6 +394,7 @@
     <MESSAGE value="AAAAAAAAAAAAA" />
     <MESSAGE value="finally something that works" />
     <MESSAGE value="finally something that ACTUALLY works" />
-    <option name="LAST_COMMIT_MESSAGE" value="finally something that ACTUALLY works" />
+    <MESSAGE value="started neural network stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="started neural network stuff" />
   </component>
 </project>
