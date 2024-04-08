@@ -159,6 +159,11 @@ class State:
                         pass
         return moves
 
+    def legal_moves_numeric(self):
+        legal = self.legal_moves()
+        possible_moves = np.array(0 if move in legal else 1 for move in self.moves)
+        return possible_moves
+
     def make_move(self, move_id):
         self.make_move_text(self.moves[move_id])
 
