@@ -37,7 +37,9 @@ class AlphaMCTS:
 
             node.backpropagate(value)
 
-        action_probs = np.array([child.visit_count for child in root.children], np.float64)
+        action_probs = np.zeros(len(state.moves))
+        for child in root.children:
+            action_probs[child.last_move] = child.visit_count
         action_probs /= np.sum(action_probs)
-        return tuple(zip(action_probs, [child.last_move for child in root.children]))
+        return action_probs
 

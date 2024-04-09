@@ -4,6 +4,7 @@ from copy import deepcopy
 import matplotlib.pyplot as plt
 import evaluators
 from AlphaMCTS import AlphaMCTS
+from AlphaZero import AlphaZero
 from MCTS import MCTS
 from ResNet import ResNet
 from state import State, InvalidMoveError
@@ -42,6 +43,20 @@ if __name__ == '__main__':
     model = ResNet(a, 4, 64)
     model.eval()
     mcts = AlphaMCTS({'num_searches': 1000, 'C': 1.41}, model)
+    #
+    # optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
+    #
+    # args = {
+    #     'C': 2,
+    #     'num_searches': 60,
+    #     'num_iterations': 3,
+    #     'num_self_play_iterations': 10,
+    #     'num_epochs': 4
+    # }
+    #
+    # alpha_zero = AlphaZero(model, optimizer, a, args)
+    #
+    # alpha_zero.learn()
 
     try:
         for i in range(100):
@@ -68,7 +83,7 @@ if __name__ == '__main__':
                     elif player == 'white' and p1_mode == 3:
                         mcts_probs = mcts.search(a)
                         print(mcts_probs)
-                        move = max(mcts_probs, key=lambda pair: pair[0])[1]
+                        move = np.argmax(mcts_probs)
                         print(a.moves[move])
                         a.make_move(move)
                     elif player == 'black' and p2_mode == 1:

@@ -4,7 +4,7 @@ import torch
 from AlphaMCTS import AlphaMCTS
 from state import State
 
-from tqdm.notebook import trange
+from tqdm import trange
 
 
 class AlphaZero:
