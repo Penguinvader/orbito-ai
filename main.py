@@ -14,13 +14,15 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
+from tqdm.notebook import trange
+
 if __name__ == '__main__':
     a = State()
     # a.h0 = 1
-    # a.h = [[0, 1, 2, 1],
-    #        [2, 0, 0, 1],
-    #        [0, 0, 0, 0],
-    #        [0, 2, 0, 2]]
+    # a.h = np.array([[0, 2, 2, 1],
+    #                 [2, 0, 0, 2],
+    #                 [0, 0, 0, 0],
+    #                 [0, 2, 0, 2]])
     # encoded_state = a.get_encoded_state()
     # print(encoded_state)
     #
@@ -70,6 +72,8 @@ if __name__ == '__main__':
                         print(a.moves[move])
                         a.make_move(move)
                     elif player == 'black' and p2_mode == 1:
+                        mcts_probs = mcts.search(a)
+                        print(mcts_probs)
                         move = random.choice(a.legal_moves())
                         print(move)
                         a.make_move_text(move)
@@ -107,4 +111,3 @@ if __name__ == '__main__':
                 'draw' if white_win and black_win else 'white wins' if white_win else 'black wins' if black_win else 'draw')
     finally:
         print(f'mcts wins:{mcts_wins} random wins:{random_wins} draws:{draws}')
-
