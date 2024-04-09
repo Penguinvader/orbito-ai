@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90245489-f813-4471-bbd8-9c66a5abff95" name="Changes" comment="encoded state">
-      <change afterPath="$PROJECT_DIR$/AlphaMCTS.py" afterDir="false" />
+    <list default="true" id="90245489-f813-4471-bbd8-9c66a5abff95" name="Changes" comment="started alphamcts">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaMCTS.py" beforeDir="false" afterPath="$PROJECT_DIR$/AlphaMCTS.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaNode.py" beforeDir="false" afterPath="$PROJECT_DIR$/AlphaNode.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/state.py" beforeDir="false" afterPath="$PROJECT_DIR$/state.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -377,7 +379,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712605182276</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="started alphamcts">
+      <option name="closed" value="true" />
+      <created>1712606257799</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1712606257799</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -411,6 +421,7 @@
     <MESSAGE value="finally something that ACTUALLY works" />
     <MESSAGE value="started neural network stuff" />
     <MESSAGE value="encoded state" />
-    <option name="LAST_COMMIT_MESSAGE" value="encoded state" />
+    <MESSAGE value="started alphamcts" />
+    <option name="LAST_COMMIT_MESSAGE" value="started alphamcts" />
   </component>
 </project>

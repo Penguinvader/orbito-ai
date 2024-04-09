@@ -62,7 +62,7 @@ class State:
         return False
 
     def rotate(self):
-        rotated = [[self.h[col[0]][col[1]] for col in row] for row in self.rotation_matrix]
+        rotated = np.array([[self.h[col[0]][col[1]] for col in row] for row in self.rotation_matrix])
         self.h = rotated
 
     def up(self, i, j):
@@ -161,7 +161,7 @@ class State:
 
     def legal_moves_numeric(self):
         legal = self.legal_moves()
-        possible_moves = np.array(0 if move in legal else 1 for move in self.moves)
+        possible_moves = np.array([1 if move in legal else 0 for move in self.moves])
         return possible_moves
 
     def make_move(self, move_id):

@@ -3,6 +3,7 @@ from copy import deepcopy
 
 import matplotlib.pyplot as plt
 import evaluators
+from AlphaMCTS import AlphaMCTS
 from MCTS import MCTS
 from ResNet import ResNet
 from state import State, InvalidMoveError
@@ -20,23 +21,26 @@ if __name__ == '__main__':
     #        [2, 0, 0, 1],
     #        [0, 0, 0, 0],
     #        [0, 2, 0, 2]]
-    encoded_state = a.get_encoded_state()
-    print(encoded_state)
-
-    tensor_state = torch.tensor(encoded_state).unsqueeze(0)
-
-    model = ResNet(a, 4, 64)
-
-    policy, value = model(tensor_state)
-    value = value.item()
-    policy = torch.softmax(policy, axis=1).squeeze(0).detach().cpu().numpy()
-
-    print(value, policy)
+    # encoded_state = a.get_encoded_state()
+    # print(encoded_state)
+    #
+    # tensor_state = torch.tensor(encoded_state).unsqueeze(0)
+    #
+    # model = ResNet(a, 4, 64)
+    #
+    # policy, value = model(tensor_state)
+    # value = value.item()
+    # policy = torch.softmax(policy, axis=1).squeeze(0).detach().cpu().numpy()
+    #
+    # print(value, policy)
 
     mcts_wins, random_wins, draws = 0, 0, 0
-    p1_mode = 0
-    p2_mode = 0
-    mcts = MCTS(args={'num_searches': 1000, 'C': 1.41})
+    p1_mode = 3
+    p2_mode = 1
+    model = ResNet(a, 4, 64)
+    model.eval()
+    mcts = AlphaMCTS({'num_searches': 1000, 'C': 1.41}, model)
+
     try:
         for i in range(100):
             a = State()
@@ -59,6 +63,12 @@ if __name__ == '__main__':
                         move = max(mcts_probs, key=lambda pair: pair[0])[1]
                         print(move)
                         a.make_move_text(move)
+                    elif player == 'white' and p1_mode == 3:
+                        mcts_probs = mcts.search(a)
+                        print(mcts_probs)
+                        move = max(mcts_probs, key=lambda pair: pair[0])[1]
+                        print(a.moves[move])
+                        a.make_move(move)
                     elif player == 'black' and p2_mode == 1:
                         move = random.choice(a.legal_moves())
                         print(move)

@@ -28,7 +28,7 @@ class AlphaMCTS:
                 )
                 policy = torch.softmax(policy, axis=1).squeeze(0).cpu().numpy()
                 valid_moves = node.state.legal_moves_numeric()
-                policy *= valid_moves
+                policy = policy * valid_moves
                 policy /= np.sum(policy)
 
                 value = value.item()
