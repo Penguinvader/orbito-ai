@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90245489-f813-4471-bbd8-9c66a5abff95" name="Changes" comment="started AlphaZero.py">
+    <list default="true" id="90245489-f813-4471-bbd8-9c66a5abff95" name="Changes" comment="changed alphamcts to return whole action space">
+      <change afterPath="$PROJECT_DIR$/model_0.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model_1.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model_2.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/optimizer_0.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/optimizer_1.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/optimizer_2.pt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlphaMCTS.py" beforeDir="false" afterPath="$PROJECT_DIR$/AlphaMCTS.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AlphaZero.py" beforeDir="false" afterPath="$PROJECT_DIR$/AlphaZero.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -36,27 +41,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Python.ResNet.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.mnisttest.executor": "Run",
-    "Python.scratch.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "ignore.virus.scanning.warn.message": "true",
-    "settings.editor.selected.configurable": "configurable.group.project"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Python.ResNet.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.mnisttest.executor&quot;: &quot;Run&quot;,
+    &quot;Python.scratch.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.project&quot;
   },
-  "keyToStringList": {
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "TEXT",
-      "Python"
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;TEXT&quot;,
+      &quot;Python&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Python.main">
     <configuration name="ResNet" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Orbito" />
@@ -402,7 +407,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712678147182</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="changed alphamcts to return whole action space">
+      <option name="closed" value="true" />
+      <created>1712679447460</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1712679447460</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -439,6 +452,7 @@
     <MESSAGE value="started alphamcts" />
     <MESSAGE value="alphamcts is crushing the competition" />
     <MESSAGE value="started AlphaZero.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="started AlphaZero.py" />
+    <MESSAGE value="changed alphamcts to return whole action space" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed alphamcts to return whole action space" />
   </component>
 </project>

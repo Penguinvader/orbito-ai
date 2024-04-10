@@ -13,7 +13,6 @@ import numpy as np
 import torch
 
 import torch.nn as nn
-import torch.nn.functional as F
 
 from tqdm.notebook import trange
 
@@ -36,26 +35,29 @@ if __name__ == '__main__':
     # policy = torch.softmax(policy, axis=1).squeeze(0).detach().cpu().numpy()
     #
     # print(value, policy)
-
-    mcts_wins, random_wins, draws = 0, 0, 0
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    white_wins, black_wins, draws = 0, 0, 0
     p1_mode = 3
     p2_mode = 1
     model = ResNet(a, 4, 64)
+    model.load_state_dict(torch.load('model_2.pt', map_location=device))
     model.eval()
     mcts = AlphaMCTS({'num_searches': 1000, 'C': 1.41}, model)
-    #
-    # optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
-    #
-    # args = {
-    #     'C': 2,
-    #     'num_searches': 60,
-    #     'num_iterations': 3,
-    #     'num_self_play_iterations': 10,
-    #     'num_epochs': 4
-    # }
-    #
-    # alpha_zero = AlphaZero(model, optimizer, a, args)
-    #
+
+    optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
+    optimizer.load_state_dict(torch.load('optimizer_2.pt', map_location=device))
+
+    args = {
+        'C': 2,
+        'num_searches': 60,
+        'num_iterations': 3,
+        'num_self_play_iterations': 500,
+        'num_epochs': 4,
+        'batch_size': 64
+    }
+
+    alpha_zero = AlphaZero(model, optimizer, a, args)
+
     # alpha_zero.learn()
 
     try:
@@ -82,13 +84,11 @@ if __name__ == '__main__':
                         a.make_move_text(move)
                     elif player == 'white' and p1_mode == 3:
                         mcts_probs = mcts.search(a)
-                        print(mcts_probs)
+                        print([(a.moves[i], prob) for i, prob in enumerate(mcts_probs) if prob])
                         move = np.argmax(mcts_probs)
                         print(a.moves[move])
                         a.make_move(move)
                     elif player == 'black' and p2_mode == 1:
-                        mcts_probs = mcts.search(a)
-                        print(mcts_probs)
                         move = random.choice(a.legal_moves())
                         print(move)
                         a.make_move_text(move)
@@ -119,10 +119,10 @@ if __name__ == '__main__':
                                 a.skip_move()
             a.print_grid()
             white_win, black_win = a.solved(1), a.solved(2)
-            mcts_wins += white_win and not black_win
-            random_wins += black_win and not white_win
+            white_wins += white_win and not black_win
+            black_wins += black_win and not white_win
             draws += white_win and black_win
             print(
                 'draw' if white_win and black_win else 'white wins' if white_win else 'black wins' if black_win else 'draw')
     finally:
-        print(f'mcts wins:{mcts_wins} random wins:{random_wins} draws:{draws}')
+        print(f'white wins:{white_wins} black wins:{black_wins} draws:{draws}')
