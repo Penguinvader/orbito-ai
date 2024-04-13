@@ -38,11 +38,13 @@ if __name__ == '__main__':
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     white_wins, black_wins, draws = 0, 0, 0
     p1_mode = 3
-    p2_mode = 1
+    p2_mode = 4
     model = ResNet(a, 4, 64)
     model.load_state_dict(torch.load('model_2.pt', map_location=device))
     model.eval()
     mcts = AlphaMCTS({'num_searches': 1000, 'C': 1.41}, model)
+    model2 = ResNet(a, 4, 64)
+    mcts2 = AlphaMCTS({'num_searches': 1000, 'C': 1.41}, model2)
 
     optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
     optimizer.load_state_dict(torch.load('optimizer_2.pt', map_location=device))
@@ -61,8 +63,13 @@ if __name__ == '__main__':
     # alpha_zero.learn()
 
     try:
-        for i in range(100):
+        for i in range(1):
             a = State()
+            a.h0 = 1
+            a.h = np.array([[0, 1, 2, 1],
+                            [2, 0, 0, 1],
+                            [0, 0, 0, 0],
+                            [0, 0, 2, 2]])
             while a.h0 != 3:
                 a0 = deepcopy(a)
                 a.print_grid()
@@ -71,19 +78,25 @@ if __name__ == '__main__':
                 else:
                     player = 'white' if a.jt == 1 else 'black'
                     print(f'Player {player} {'move' if a.h0 == 1 else 'placement'} coordinates (row column):')
-                    if player == 'white' and p1_mode == 1:
+                    if player == 'white' and p1_mode == 1 or player == 'black' and p2_mode == 1:
                         mm = minimax.minimax(a, 2, 1, evaluator=evaluators.two_in_a_row)
                         move = mm[1]
                         print(mm)
                         a.make_move_text(move)
-                    elif player == 'white' and p1_mode == 2:
+                    elif player == 'white' and p1_mode == 2 or player == 'black' and p2_mode == 2:
                         mcts_probs = mcts.search(a)
                         print(mcts_probs)
                         move = max(mcts_probs, key=lambda pair: pair[0])[1]
                         print(move)
                         a.make_move_text(move)
-                    elif player == 'white' and p1_mode == 3:
+                    elif player == 'white' and p1_mode == 3 or player == 'black' and p2_mode == 3:
                         mcts_probs = mcts.search(a)
+                        print([(a.moves[i], prob) for i, prob in enumerate(mcts_probs) if prob])
+                        move = np.argmax(mcts_probs)
+                        print(a.moves[move])
+                        a.make_move(move)
+                    elif player == 'white' and p1_mode == 4 or player == 'black' and p2_mode == 4:
+                        mcts_probs = mcts2.search(a)
                         print([(a.moves[i], prob) for i, prob in enumerate(mcts_probs) if prob])
                         move = np.argmax(mcts_probs)
                         print(a.moves[move])

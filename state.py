@@ -162,6 +162,7 @@ class State:
     def legal_moves_numeric(self):
         legal = self.legal_moves()
         possible_moves = np.array([1 if move in legal else 0 for move in self.moves])
+        # possible_moves[0] = 0 if 1 in possible_moves[1:] else 1
         return possible_moves
 
     def make_move(self, move_id):
