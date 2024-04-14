@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90245489-f813-4471-bbd8-9c66a5abff95" name="Changes" comment="added requirements.txt" />
+    <list default="true" id="90245489-f813-4471-bbd8-9c66a5abff95" name="Changes" comment="GPU support">
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -438,7 +440,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713114090894</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="GPU support">
+      <option name="closed" value="true" />
+      <created>1713114610368</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1713114610368</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -454,7 +464,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="initial commit" />
     <MESSAGE value="very basic evaluate function" />
     <MESSAGE value="very basic agent (random moves unless win in 1)" />
     <MESSAGE value="agent slides if it leads to winning move" />
@@ -479,6 +488,7 @@
     <MESSAGE value="trained some stuff" />
     <MESSAGE value="trained more models (root folder has the one that always slides)" />
     <MESSAGE value="added requirements.txt" />
-    <option name="LAST_COMMIT_MESSAGE" value="added requirements.txt" />
+    <MESSAGE value="GPU support" />
+    <option name="LAST_COMMIT_MESSAGE" value="GPU support" />
   </component>
 </project>

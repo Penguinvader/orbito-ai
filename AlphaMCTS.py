@@ -24,7 +24,7 @@ class AlphaMCTS:
 
             if not is_terminal:
                 policy, value = self.model(
-                    torch.tensor(node.state.get_encoded_state()).unsqueeze(0), device=self.model.device
+                    torch.tensor(node.state.get_encoded_state(), device=self.model.device).unsqueeze(0)
                 )
                 policy = torch.softmax(policy, axis=1).squeeze(0).cpu().numpy()
                 valid_moves = node.state.legal_moves_numeric()

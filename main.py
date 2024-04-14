@@ -64,7 +64,7 @@ if __name__ == '__main__':
 
     alpha_zero = AlphaZero(model, optimizer, a, args)
 
-    # alpha_zero.learn()
+    alpha_zero.learn()
 
     model.eval()
     model2.eval()
