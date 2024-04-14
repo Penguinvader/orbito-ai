@@ -32,7 +32,7 @@ if __name__ == '__main__':
     #
     # policy, value = model(tensor_state)
     # value = value.item()
-    # policy = torch.softmax(policy, axis=1).squeeze(0).detach().cpu().numpy()
+    # policy = torch.softmax(policy, dim=1).squeeze(0).detach().cpu().numpy()
     #
     # print(value, policy)
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -43,10 +43,10 @@ if __name__ == '__main__':
     basic_mcts = MCTS({'num_searches': 1000, 'C': 1.41})
     model = ResNet(a, 4, 64, device)
     # model.load_state_dict(torch.load('model_2.pt', map_location=device))
-    mcts = AlphaMCTS({'num_searches': 1000, 'C': 1.41}, model)
+    mcts = AlphaMCTS({'num_searches': 1000, 'C': 1.41, 'dirichlet_epsilon': 0.25, 'dirichlet_alpha': 0.3}, model)
     model2 = ResNet(a, 4, 64, device)
     # model2.load_state_dict(torch.load('models/model_2.pt', map_location=device))
-    mcts2 = AlphaMCTS({'num_searches': 1000, 'C': 1.41}, model2)
+    mcts2 = AlphaMCTS({'num_searches': 1000, 'C': 1.41, 'dirichlet_epsilon': 0.25, 'dirichlet_alpha': 0.3}, model2)
 
     optimizer = torch.optim.Adam(model.parameters(), lr=0.001, weight_decay=0.0001)
     # optimizer.load_state_dict(torch.load('optimizer_2.pt', map_location=device))
@@ -76,12 +76,12 @@ if __name__ == '__main__':
         for i in range(100):
             random_moves = 0
             a = State()
-            a.h0 = 1
-            a.jt = 2
-            a.h = np.array([[0, 2, 1, 2],
-                            [1, 0, 0, 2],
-                            [0, 0, 0, 0],
-                            [0, 0, 1, 1]])
+            # a.h0 = 1
+            # a.jt = 2
+            # a.h = np.array([[0, 2, 1, 2],
+            #                 [1, 0, 0, 2],
+            #                 [0, 0, 0, 0],
+            #                 [0, 0, 1, 1]])
             # a.h = np.array([[0, 1, 2, 1],
             #                 [2, 0, 0, 1],
             #                 [0, 0, 0, 0],
