@@ -12,7 +12,21 @@ class AlphaMCTS:
 
     @torch.no_grad()
     def search(self, state):
-        root = Node(self.args, state)
+        root = Node(self.args, state, visit_count=1)
+
+        policy, _ = self.model(
+            torch.tensor(state.get_encoded_state(), device=self.model.device).unsqueeze(0)
+        )
+        policy = torch.softmax(policy, axis=1).squeeze(0).cpu().numpy()
+
+        policy = ((1 - self.args['dirichlet_epsilon']) * policy + self.args['dirichlet_epsilon'] *
+                  np.random.dirichlet([self.args['dirichlet_alpha']] * len(state.moves)))
+
+        valid_moves = state.legal_moves_numeric()
+        policy *= valid_moves
+
+        policy /= np.sum(policy)
+        root.expand(policy)
 
         for search in range(self.args['num_searches']):
             node = root
@@ -42,4 +56,3 @@ class AlphaMCTS:
             action_probs[child.last_move] = child.visit_count
         action_probs /= np.sum(action_probs)
         return action_probs
-

@@ -27,7 +27,11 @@ class AlphaZero:
 
             memory.append((state, action_probs, state.jt))
 
-            action = np.random.choice(len(state.moves), p=action_probs)
+            temperature_action_probs = action_probs ** (1 / self.args['temperature'])
+
+            temperature_action_probs /= np.sum(temperature_action_probs)
+
+            action = np.random.choice(len(state.moves), p=temperature_action_probs)
 
             state.make_move(action)
 

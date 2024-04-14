@@ -48,9 +48,9 @@ if __name__ == '__main__':
     # model2.load_state_dict(torch.load('models/model_2.pt', map_location=device))
     mcts2 = AlphaMCTS({'num_searches': 1000, 'C': 1.41}, model2)
 
-    optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
+    optimizer = torch.optim.Adam(model.parameters(), lr=0.001, weight_decay=0.0001)
     # optimizer.load_state_dict(torch.load('optimizer_2.pt', map_location=device))
-    optimizer2 = torch.optim.Adam(model.parameters(), lr=0.001)
+    optimizer2 = torch.optim.Adam(model.parameters(), lr=0.001, weight_decay=0.0001)
     # optimizer2.load_state_dict(torch.load('models/optimizer_2.pt', map_location=device))
 
     args = {
@@ -59,7 +59,10 @@ if __name__ == '__main__':
         'num_iterations': 3,
         'num_self_play_iterations': 500,
         'num_epochs': 4,
-        'batch_size': 64
+        'batch_size': 64,
+        'temperature': 1.25,
+        'dirichlet_epsilon': 0.25,
+        'dirichlet_alpha': 0.3
     }
 
     alpha_zero = AlphaZero(model, optimizer, a, args)

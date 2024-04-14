@@ -8,7 +8,7 @@ from state import State
 
 
 class Node:
-    def __init__(self, args, state: State, parent=None, last_move=None, prior=0):
+    def __init__(self, args, state: State, parent=None, last_move=None, prior=0, visit_count=0):
         self.args = args
         self.state = state
         self.parent = parent
@@ -17,7 +17,7 @@ class Node:
 
         self.children = []
 
-        self.visit_count = 0
+        self.visit_count = visit_count
         self.value_sum = 0
 
     def is_fully_expanded(self):
