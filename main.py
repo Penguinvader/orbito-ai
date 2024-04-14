@@ -41,10 +41,10 @@ if __name__ == '__main__':
     p1_mode = 2
     p2_mode = 3
     basic_mcts = MCTS({'num_searches': 1000, 'C': 1.41})
-    model = ResNet(a, 4, 64)
+    model = ResNet(a, 4, 64, device)
     # model.load_state_dict(torch.load('model_2.pt', map_location=device))
     mcts = AlphaMCTS({'num_searches': 1000, 'C': 1.41}, model)
-    model2 = ResNet(a, 4, 64)
+    model2 = ResNet(a, 4, 64, device)
     # model2.load_state_dict(torch.load('models/model_2.pt', map_location=device))
     mcts2 = AlphaMCTS({'num_searches': 1000, 'C': 1.41}, model2)
 
