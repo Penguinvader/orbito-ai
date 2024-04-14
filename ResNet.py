@@ -21,7 +21,6 @@ class ResNet(nn.Module):
             nn.BatchNorm2d(32),
             nn.ReLU(),
             nn.Flatten(),
-            # h0 jt h, skip full place up down left right
             nn.Linear(32 * (4 * 4), len(state.moves))
         )
 

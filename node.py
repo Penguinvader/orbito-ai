@@ -37,7 +37,7 @@ class Node:
 
     def get_ucb(self, child):
         q_value = ((child.value_sum / child.visit_count) + 1) / 2
-        if child.state.jt == 2:
+        if child.state.jt == 3 - self.state.jt:
             q_value = 1.0 - q_value
         return q_value + self.args['C'] * math.sqrt(math.log(self.visit_count) / child.visit_count)
 

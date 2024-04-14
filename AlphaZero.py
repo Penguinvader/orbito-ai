@@ -20,24 +20,23 @@ class AlphaZero:
 
     def self_play(self):
         memory = []
-        jt = 1
         state = State()
 
         while True:
             action_probs = self.mcts.search(state)
 
-            memory.append((state, action_probs, jt))
+            memory.append((state, action_probs, state.jt))
 
             action = np.random.choice(len(state.moves), p=action_probs)
 
             state.make_move(action)
 
-            value, is_terminal = state.evaluate(jt), state.h0 == 3
+            value, is_terminal = state.evaluate(state.jt), state.h0 == 3
 
             if is_terminal:
                 return_memory = []
                 for hist_state, hist_action_probs, hist_jt in memory:
-                    hist_outcome = value if hist_jt == jt else -value
+                    hist_outcome = value if hist_jt == state.jt else -value
                     return_memory.append((
                         hist_state.get_encoded_state(),
                         hist_action_probs,
@@ -45,7 +44,6 @@ class AlphaZero:
                     ))
                 return return_memory
 
-            jt = state.jt
 
 
 
@@ -55,7 +53,9 @@ class AlphaZero:
         for batch_idx in range(0, len(memory), self.args['batch_size']):
             sample = memory[batch_idx:min(len(memory)-1, batch_idx + self.args['batch_size'])]
             state, policy_targets, value_targets = zip(*sample)
+
             state, policy_targets = np.array(state), np.array(policy_targets)
+
             value_targets = np.array(value_targets).reshape(-1, 1)
             state = torch.tensor(state, dtype=torch.float32)
             policy_targets = torch.tensor(policy_targets, dtype=torch.float32)
