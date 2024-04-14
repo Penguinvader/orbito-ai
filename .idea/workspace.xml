@@ -5,36 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="90245489-f813-4471-bbd8-9c66a5abff95" name="Changes" comment="trained more models (root folder has the one that always slides)">
-      <change afterPath="$PROJECT_DIR$/models/3/model_0.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/3/model_0_slide.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/3/model_1.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/3/model_1_slide.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/3/model_2.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/3/model_2_slide.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/3/optimizer_0.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/3/optimizer_0_slide.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/3/optimizer_1.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/3/optimizer_1_slide.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/3/optimizer_2.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/3/optimizer_2_slide.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/4/model_0.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/4/model_1.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/4/model_2.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/4/optimizer_0.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/4/optimizer_1.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/4/optimizer_2.pt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlphaNode.py" beforeDir="false" afterPath="$PROJECT_DIR$/AlphaNode.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlphaZero.py" beforeDir="false" afterPath="$PROJECT_DIR$/AlphaZero.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ResNet.py" beforeDir="false" afterPath="$PROJECT_DIR$/ResNet.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_0.pt" beforeDir="false" afterPath="$PROJECT_DIR$/model_0.pt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_1.pt" beforeDir="false" afterPath="$PROJECT_DIR$/model_1.pt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_2.pt" beforeDir="false" afterPath="$PROJECT_DIR$/model_2.pt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node.py" beforeDir="false" afterPath="$PROJECT_DIR$/node.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/optimizer_0.pt" beforeDir="false" afterPath="$PROJECT_DIR$/optimizer_0.pt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/optimizer_1.pt" beforeDir="false" afterPath="$PROJECT_DIR$/optimizer_1.pt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/optimizer_2.pt" beforeDir="false" afterPath="$PROJECT_DIR$/optimizer_2.pt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -452,7 +423,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713027175212</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="trained more models (root folder has the one that always slides)">
+      <option name="closed" value="true" />
+      <created>1713111327436</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1713111327436</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
