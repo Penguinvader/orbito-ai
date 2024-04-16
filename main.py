@@ -36,12 +36,13 @@ if __name__ == '__main__':
     #
     # print(value, policy)
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    device = 'cpu'
     white_wins, black_wins, draws = 0, 0, 0
     # 1: random, 2: mcts, 3: alpha_mcts1 4: alpha_mcts2 5: minimax
     p1_mode = 2
     p2_mode = 3
     basic_mcts = MCTS({'num_searches': 1000, 'C': 1.41})
-    model = ResNet(a, 4, 64, device)
+    model = ResNet(a, 9, 128, device)
     # model.load_state_dict(torch.load('model_2.pt', map_location=device))
     mcts = AlphaMCTS({'num_searches': 1000, 'C': 1.41, 'dirichlet_epsilon': 0.25, 'dirichlet_alpha': 0.3}, model)
     model2 = ResNet(a, 4, 64, device)

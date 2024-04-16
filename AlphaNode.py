@@ -52,7 +52,6 @@ class Node:
 
                 child = Node(self.args, child_state, parent=self, last_move=action, prior=prob)
                 self.children.append(child)
-        return child
 
     def backpropagate(self, value):
         self.value_sum += value

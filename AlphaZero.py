@@ -1,4 +1,5 @@
 import random
+from copy import deepcopy
 
 import numpy as np
 import torch
@@ -25,7 +26,7 @@ class AlphaZero:
         while True:
             action_probs = self.mcts.search(state)
 
-            memory.append((state, action_probs, state.jt))
+            memory.append((deepcopy(state), action_probs, state.jt))
 
             temperature_action_probs = action_probs ** (1 / self.args['temperature'])
 
