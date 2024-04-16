@@ -3,7 +3,7 @@ from copy import deepcopy
 
 import numpy as np
 import torch
-import torch.nn.functional as F
+import torch.nn.functional as func
 
 from AlphaMCTS import AlphaMCTS
 from state import State
@@ -49,14 +49,10 @@ class AlphaZero:
                     ))
                 return return_memory
 
-
-
-
-
     def train(self, memory):
         random.shuffle(memory)
         for batch_idx in range(0, len(memory), self.args['batch_size']):
-            sample = memory[batch_idx:min(len(memory)-1, batch_idx + self.args['batch_size'])]
+            sample = memory[batch_idx:min(len(memory) - 1, batch_idx + self.args['batch_size'])]
             state, policy_targets, value_targets = zip(*sample)
 
             state, policy_targets = np.array(state), np.array(policy_targets)
@@ -68,21 +64,20 @@ class AlphaZero:
 
             out_policy, out_value = self.model(state)
 
-            policy_loss = F.cross_entropy(out_policy, policy_targets)
-            value_loss = F.mse_loss(out_value, value_targets)
+            policy_loss = func.cross_entropy(out_policy, policy_targets)
+            value_loss = func.mse_loss(out_value, value_targets)
             loss = policy_loss + value_loss
 
             self.optimizer.zero_grad()
             loss.backward()
             self.optimizer.step()
 
-
     def learn(self):
         for iteration in trange(self.args['num_iterations']):
             memory = []
 
             self.model.eval()
-            for self_play_iteration in trange(self.args['num_self_play_iterations']):
+            for _ in trange(self.args['num_self_play_iterations']):
                 memory += self.self_play()
 
             self.model.train()
@@ -91,6 +86,3 @@ class AlphaZero:
 
             torch.save(self.model.state_dict(), f'model_{iteration}.pt')
             torch.save(self.optimizer.state_dict(), f'optimizer_{iteration}.pt')
-
-
-

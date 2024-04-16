@@ -9,7 +9,7 @@ class ResNet(nn.Module):
         super().__init__()
         self.device = device
         self.startBlock = nn.Sequential(
-            nn.Conv2d(6, num_hidden, kernel_size=3, padding=1),
+            nn.Conv2d(5, num_hidden, kernel_size=3, padding=1),
             nn.BatchNorm2d(num_hidden),
             nn.ReLU()
         )
@@ -26,11 +26,11 @@ class ResNet(nn.Module):
         )
 
         self.valueHead = nn.Sequential(
-            nn.Conv2d(num_hidden, 6, kernel_size=3, padding=1),
-            nn.BatchNorm2d(6),
+            nn.Conv2d(num_hidden, 5, kernel_size=3, padding=1),
+            nn.BatchNorm2d(5),
             nn.ReLU(),
             nn.Flatten(),
-            nn.Linear(6 * (4 * 4), 1),
+            nn.Linear(5 * (4 * 4), 1),
             nn.Tanh()
         )
         self.to(device)

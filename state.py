@@ -205,7 +205,7 @@ class State:
         h0_map = np.repeat(self.h0, 16).reshape((4, 4))
         jt_map = np.repeat(self.jt, 16).reshape((4, 4))
         encoded_state = np.stack(
-            (h0_map == 3, h0_map == 1, jt_map == 1, self.h == 2, self.h == 0, self.h == 1)
+            (h0_map == 1, jt_map == 1, self.h == 2, self.h == 0, self.h == 1)
         ).astype(np.float32)
 
         return encoded_state
