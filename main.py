@@ -43,14 +43,14 @@ if __name__ == '__main__':
     p2_mode = 2
     basic_mcts = MCTS({'num_searches': 1000, 'C': 1.41})
     model = ResNet(a, 9, 128, device)
-    model.load_state_dict(torch.load('model_7.pt', map_location=device))
+    model.load_state_dict(torch.load('models/search_120_it_8_selfplay_500_epochs4_temp1.25_eps0.25_alpha0.3/model_7.pt', map_location=device))
     mcts = AlphaMCTS({'num_searches': 1000, 'C': 1.41, 'dirichlet_epsilon': 0., 'dirichlet_alpha': 0.3}, model)
     model2 = ResNet(a, 4, 64, device)
     # model2.load_state_dict(torch.load('models/model_2.pt', map_location=device))
     mcts2 = AlphaMCTS({'num_searches': 1000, 'C': 1.41, 'dirichlet_epsilon': 0., 'dirichlet_alpha': 0.3}, model2)
 
     optimizer = torch.optim.Adam(model.parameters(), lr=0.001, weight_decay=0.0001)
-    optimizer.load_state_dict(torch.load('optimizer_7.pt', map_location=device))
+    optimizer.load_state_dict(torch.load('models/search_120_it_8_selfplay_500_epochs4_temp1.25_eps0.25_alpha0.3/optimizer_7.pt', map_location=device))
     optimizer2 = torch.optim.Adam(model.parameters(), lr=0.001, weight_decay=0.0001)
     # optimizer2.load_state_dict(torch.load('models/optimizer_2.pt', map_location=device))
 
