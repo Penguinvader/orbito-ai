@@ -41,23 +41,23 @@ if __name__ == '__main__':
     # 1: random, 2: mcts, 3: alpha_mcts1 4: alpha_mcts2 5: minimax
     p1_mode = 3
     p2_mode = 2
-    basic_mcts = MCTS({'num_searches': 300, 'C': 1.41})
+    basic_mcts = MCTS({'num_searches': 1000, 'C': 1.41})
     model = ResNet(a, 9, 128, device)
-    model.load_state_dict(torch.load('model_2.pt', map_location=device))
+    model.load_state_dict(torch.load('model_7.pt', map_location=device))
     mcts = AlphaMCTS({'num_searches': 1000, 'C': 1.41, 'dirichlet_epsilon': 0., 'dirichlet_alpha': 0.3}, model)
     model2 = ResNet(a, 4, 64, device)
     # model2.load_state_dict(torch.load('models/model_2.pt', map_location=device))
-    mcts2 = AlphaMCTS({'num_searches': 1000, 'C': 1.41, 'dirichlet_epsilon': 0.25, 'dirichlet_alpha': 0.3}, model2)
+    mcts2 = AlphaMCTS({'num_searches': 1000, 'C': 1.41, 'dirichlet_epsilon': 0., 'dirichlet_alpha': 0.3}, model2)
 
     optimizer = torch.optim.Adam(model.parameters(), lr=0.001, weight_decay=0.0001)
-    optimizer.load_state_dict(torch.load('optimizer_2.pt', map_location=device))
+    optimizer.load_state_dict(torch.load('optimizer_7.pt', map_location=device))
     optimizer2 = torch.optim.Adam(model.parameters(), lr=0.001, weight_decay=0.0001)
     # optimizer2.load_state_dict(torch.load('models/optimizer_2.pt', map_location=device))
 
     args = {
         'C': 2,
-        'num_searches': 60,
-        'num_iterations': 3,
+        'num_searches': 120,
+        'num_iterations': 8,
         'num_self_play_iterations': 500,
         'num_parallel_games': 100,
         'num_epochs': 4,
@@ -154,7 +154,7 @@ if __name__ == '__main__':
             white_win, black_win = a.solved(1), a.solved(2)
             white_wins += white_win and not black_win
             black_wins += black_win and not white_win
-            draws += white_win and black_win
+            draws += (white_win and black_win) or (not white_win and not black_win)
             print(
                 'draw' if white_win and black_win else 'white wins' if white_win else 'black wins' if black_win else 'draw')
     finally:
