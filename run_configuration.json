@@ -1,0 +1,57 @@
+{
+  "number_of_games": 20,
+  "players": [
+    {
+      "random_start": true,
+      "white": {
+        "agent": "alphazero",
+        "training_data": "60/3/500"
+      },
+      "black": {
+        "agent": "alphazero",
+        "training_data": "120/8/500"
+      }
+    },  
+    {
+      "random_start": false,
+      "white": {
+        "agent": "alphazero",
+        "training_data": "120/8/500"
+      },
+      "black": {
+        "agent": "random"
+      }
+    },  
+    {
+      "random_start": false,
+      "white": {
+        "agent": "mcts",
+        "num_searches": 100
+      },
+      "black": {
+        "agent": "mcts",
+        "num_searches": 300
+      }
+    },
+    {
+      "random_start": false,
+      "white": {
+        "agent": "random"
+      },
+      "black": {
+        "agent": "random"
+      }
+    },
+    {
+      "random_start": false,
+      "white": {
+        "agent": "minimax",
+        "evaluator": "two_in_a_row"
+      },
+      "black": {
+        "agent": "minimax",
+        "evaluator": "win"
+      }
+    }
+  ]
+}

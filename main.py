@@ -39,24 +39,24 @@ if __name__ == '__main__':
     device = 'cpu'
     white_wins, black_wins, draws = 0, 0, 0
     # 1: random, 2: mcts, 3: alpha_mcts1 4: alpha_mcts2 5: minimax
-    p1_mode = 3
-    p2_mode = 2
+    p1_mode = 2
+    p2_mode = 3
     basic_mcts = MCTS({'num_searches': 1000, 'C': 1.41})
     model = ResNet(a, 9, 128, device)
-    model.load_state_dict(torch.load('models/search_120_it_8_selfplay_500_epochs4_temp1.25_eps0.25_alpha0.3/model_7.pt', map_location=device))
+    # model.load_state_dict(torch.load('models/search_120_it_8_selfplay_500_epochs4_temp1.25_eps0.25_alpha0.3/model_7.pt', map_location=device))
     mcts = AlphaMCTS({'num_searches': 1000, 'C': 1.41, 'dirichlet_epsilon': 0., 'dirichlet_alpha': 0.3}, model)
     model2 = ResNet(a, 4, 64, device)
     # model2.load_state_dict(torch.load('models/model_2.pt', map_location=device))
     mcts2 = AlphaMCTS({'num_searches': 1000, 'C': 1.41, 'dirichlet_epsilon': 0., 'dirichlet_alpha': 0.3}, model2)
 
     optimizer = torch.optim.Adam(model.parameters(), lr=0.001, weight_decay=0.0001)
-    optimizer.load_state_dict(torch.load('models/search_120_it_8_selfplay_500_epochs4_temp1.25_eps0.25_alpha0.3/optimizer_7.pt', map_location=device))
+    # optimizer.load_state_dict(torch.load('models/search_120_it_8_selfplay_500_epochs4_temp1.25_eps0.25_alpha0.3/optimizer_7.pt', map_location=device))
     optimizer2 = torch.optim.Adam(model.parameters(), lr=0.001, weight_decay=0.0001)
     # optimizer2.load_state_dict(torch.load('models/optimizer_2.pt', map_location=device))
 
     args = {
         'C': 2,
-        'num_searches': 120,
+        'num_searches': 360,
         'num_iterations': 8,
         'num_self_play_iterations': 500,
         'num_parallel_games': 100,
@@ -69,13 +69,13 @@ if __name__ == '__main__':
 
     alpha_zero = AlphaZero(model, optimizer, a, args)
 
-    # alpha_zero.learn()
+    alpha_zero.learn()
 
     model.eval()
     model2.eval()
 
     try:
-        for i in range(100):
+        for i in range(20):
             random_moves = 0
             a = State()
             # a.h0 = 1
