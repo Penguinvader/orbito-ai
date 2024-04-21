@@ -4,27 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90245489-f813-4471-bbd8-9c66a5abff95" name="Changes" comment="trained model, 120 searches, 8 iterations, 500 selfplay, 4 epochs, 1.25 temp, 0.25 epsilon, 0.3 alpha">
-      <change afterPath="$PROJECT_DIR$/model_0.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model_1.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model_2.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model_3.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model_4.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model_5.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model_6.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model_7.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/optimizer_0.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/optimizer_1.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/optimizer_2.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/optimizer_3.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/optimizer_4.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/optimizer_5.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/optimizer_6.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/optimizer_7.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run_configuration.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stat_collector.py" afterDir="false" />
+    <list default="true" id="90245489-f813-4471-bbd8-9c66a5abff95" name="Changes" comment="stat collector, 360/8/500 model">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run_configuration.json" beforeDir="false" afterPath="$PROJECT_DIR$/run_configuration.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -530,7 +512,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713460034717</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="stat collector, 360/8/500 model">
+      <option name="closed" value="true" />
+      <created>1713652157465</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1713652157465</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -546,7 +536,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="super basic minimax (probably doesn't even work yet)" />
     <MESSAGE value="minimax changes" />
     <MESSAGE value="fix wrap around" />
     <MESSAGE value="added evaluators" />
@@ -571,7 +560,8 @@
     <MESSAGE value="selfplay HUGE MASSIVE GIGANTIC fix" />
     <MESSAGE value="trained post-bugfix model" />
     <MESSAGE value="trained model, 120 searches, 8 iterations, 500 selfplay, 4 epochs, 1.25 temp, 0.25 epsilon, 0.3 alpha" />
-    <option name="LAST_COMMIT_MESSAGE" value="trained model, 120 searches, 8 iterations, 500 selfplay, 4 epochs, 1.25 temp, 0.25 epsilon, 0.3 alpha" />
+    <MESSAGE value="stat collector, 360/8/500 model" />
+    <option name="LAST_COMMIT_MESSAGE" value="stat collector, 360/8/500 model" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
