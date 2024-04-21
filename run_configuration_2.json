@@ -1,0 +1,170 @@
+{
+  "number_of_games": 10,
+  "players": [
+    {
+      "random_start": false,
+      "white": {
+        "agent": "alphazero",
+        "training_data": "60/3/500"
+      },
+      "black": {
+        "agent": "mcts",
+        "num_searches": 100
+      }
+    },
+    {
+      "random_start": false,
+      "white": {
+        "agent": "mcts",
+        "num_searches": 100
+      },
+      "black": {
+        "agent": "alphazero",
+        "training_data": "60/3/500"
+      }
+    },
+    {
+      "random_start": false,
+      "white": {
+        "agent": "alphazero",
+        "training_data": "60/3/500"
+      },
+      "black": {
+        "agent": "mcts",
+        "num_searches": 300
+      }
+    },
+    {
+      "random_start": false,
+      "white": {
+        "agent": "mcts",
+        "num_searches": 300
+      },
+      "black": {
+        "agent": "alphazero",
+        "training_data": "60/3/500"
+      }
+    },
+    {
+      "random_start": false,
+      "white": {
+        "agent": "alphazero",
+        "training_data": "60/3/500"
+      },
+      "black": {
+        "agent": "mcts",
+        "num_searches": 1000
+      }
+    },
+    {
+      "random_start": false,
+      "white": {
+        "agent": "mcts",
+        "num_searches": 1000
+      },
+      "black": {
+        "agent": "alphazero",
+        "training_data": "60/3/500"
+      }
+    },
+    {
+      "random_start": false,
+      "white": {
+        "agent": "alphazero",
+        "training_data": "360/8/500"
+      },
+      "black": {
+        "agent": "mcts",
+        "num_searches": 100
+      }
+    },
+    {
+      "random_start": false,
+      "white": {
+        "agent": "mcts",
+        "num_searches": 100
+      },
+      "black": {
+        "agent": "alphazero",
+        "training_data": "360/8/500"
+      }
+    },
+    {
+      "random_start": false,
+      "white": {
+        "agent": "alphazero",
+        "training_data": "360/8/500"
+      },
+      "black": {
+        "agent": "mcts",
+        "num_searches": 300
+      }
+    },
+    {
+      "random_start": false,
+      "white": {
+        "agent": "mcts",
+        "num_searches": 300
+      },
+      "black": {
+        "agent": "alphazero",
+        "training_data": "360/8/500"
+      }
+    },
+    {
+      "random_start": false,
+      "white": {
+        "agent": "alphazero",
+        "training_data": "360/8/500"
+      },
+      "black": {
+        "agent": "mcts",
+        "num_searches": 1000
+      }
+    },
+    {
+      "random_start": false,
+      "white": {
+        "agent": "mcts",
+        "num_searches": 1000
+      },
+      "black": {
+        "agent": "alphazero",
+        "training_data": "360/8/500"
+      }
+    },
+    {
+      "random_start": false,
+      "white": {
+        "agent": "mcts",
+        "num_searches": 100
+      },
+      "black": {
+        "agent": "mcts",
+        "num_searches": 100
+      }
+    },
+    {
+      "random_start": false,
+      "black": {
+        "agent": "mcts",
+        "num_searches": 300
+      },
+      "white": {
+        "agent": "mcts",
+        "num_searches": 300
+      }
+    },
+    {
+      "random_start": false,
+      "white": {
+        "agent": "mcts",
+        "num_searches": 1000
+      },
+      "black": {
+        "agent": "mcts",
+        "num_searches": 1000
+      }
+    }
+  ]
+}
