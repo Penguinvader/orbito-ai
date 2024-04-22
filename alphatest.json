@@ -1,0 +1,27 @@
+{
+  "number_of_games": 100,
+  "players": [
+    {
+      "random_start": false,
+      "white": {
+        "agent": "alphazero",
+        "training_data": "360/8/500"
+      },
+      "black": {
+        "agent": "mcts",
+        "num_searches": 1000
+      }
+    },
+    {
+      "random_start": false,
+      "white": {
+        "agent": "mcts",
+        "num_searches": 1000
+      },
+      "black": {
+        "agent": "alphazero",
+        "training_data": "360/8/500"
+      }
+    }
+  ]
+}

@@ -138,7 +138,7 @@ def play_games(white_player, black_player, games, random_start):
         result_file.write('\n')
 
 
-rc = json.load(open('run_configuration.json'))
+rc = json.load(open('run_configuration_5.json'))
 for p in rc['players']:
     play_games(get_player(p['white']),
                get_player(p['black']),
