@@ -133,7 +133,7 @@ def play_games(white_player, black_player, games, random_start):
     }
     print()
     print(result)
-    with open('results.txt', 'a') as result_file:
+    with open('results_mini2.txt', 'a') as result_file:
         json.dump(result, result_file)
         result_file.write('\n')
 

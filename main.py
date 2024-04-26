@@ -1,7 +1,6 @@
 import random
 from copy import deepcopy
 
-import matplotlib.pyplot as plt
 import evaluators
 from AlphaMCTS import AlphaMCTS
 from AlphaZero import AlphaZero
@@ -59,7 +58,6 @@ if __name__ == '__main__':
         'num_searches': 360,
         'num_iterations': 8,
         'num_self_play_iterations': 500,
-        'num_parallel_games': 100,
         'num_epochs': 4,
         'batch_size': 128,
         'temperature': 1.25,

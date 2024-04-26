@@ -7,7 +7,7 @@ def minimax(state: State, depth: int, jt: int, evaluator=evaluators.win):
     if (depth == 0 and state.h0 != 1) or state.h0 == 3:
         return state.evaluate(jt, evaluator=evaluator), state.last_move
 
-    child_nodes = [(s[1], minimax(s[1], depth if state.h0 == 1 else depth - 1, jt)) for s in
+    child_nodes = [(s[1], minimax(s[1], depth if state.h0 == 1 else depth - 1, jt, evaluator)) for s in
                    state.child_nodes()]
     shuffle(child_nodes)
     if state.jt == jt:

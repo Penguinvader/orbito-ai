@@ -44,9 +44,9 @@ class State:
             print("".join("⚪" if j == 1 else "⚫" if j == 2 else "⭕" for j in row))
 
     def constraint(self):
-        whites = sum(row.count(1) for row in self.h)
-        blacks = sum(row.count(2) for row in self.h)
-        return (self.jt == 1 and whites == blacks) or (self.jt == 2 and whites == blacks + 1)
+        white_count = sum(row.count(1) for row in self.h)
+        black_count = sum(row.count(2) for row in self.h)
+        return (self.jt == 1 and white_count == black_count) or (self.jt == 2 and white_count == black_count + 1)
 
     def solved(self, jt):
         sets = []
@@ -124,7 +124,6 @@ class State:
             self.last_move = f'full'
             for n in range(5):
                 self.rotate()
-                # self.print_grid()
                 if self.solved(1) or self.solved(2):
                     return
         else:
