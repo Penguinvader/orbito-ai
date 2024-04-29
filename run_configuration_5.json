@@ -4,8 +4,8 @@
     {
       "random_start": false,
       "white": {
-        "agent": "alphazero",
-        "training_data": "120/8/500"
+        "agent": "minimax",
+        "evaluator": "two_in_a_row"
       },
       "black": {
         "agent": "minimax",
@@ -15,56 +15,12 @@
     {
       "random_start": false,
       "white": {
-        "agent": "alphazero",
-        "training_data": "120/8/500"
-      },
-      "black": {
-        "agent": "minimax",
-        "evaluator": "two_in_a_row"
-      }
-    },
-    {
-      "random_start": false,
-      "white": {
-        "agent": "alphazero",
-        "training_data": "120/8/500"
-      },
-      "black": {
-        "agent": "mcts",
-        "num_searches": 100
-      }
-    },
-    {
-      "random_start": false,
-      "white": {
-        "agent": "alphazero",
-        "training_data": "120/8/500"
-      },
-      "black": {
-        "agent": "mcts",
-        "num_searches": 300
-      }
-    },
-    {
-      "random_start": false,
-      "white": {
-        "agent": "alphazero",
-        "training_data": "120/8/500"
-      },
-      "black": {
-        "agent": "mcts",
-        "num_searches": 1000
-      }
-    },
-    {
-      "random_start": false,
-      "white": {
         "agent": "minimax",
         "evaluator": "win"
       },
       "black": {
-        "agent": "alphazero",
-        "training_data": "120/8/500"
+        "agent": "minimax",
+        "evaluator": "two_in_a_row"
       }
     },
     {
@@ -74,8 +30,19 @@
         "evaluator": "two_in_a_row"
       },
       "black": {
-        "agent": "alphazero",
-        "training_data": "120/8/500"
+        "agent": "minimax",
+        "evaluator": "two_in_a_row"
+      }
+    },
+    {
+      "random_start": false,
+      "white": {
+        "agent": "minimax",
+        "evaluator": "two_in_a_row"
+      },
+      "black": {
+        "agent": "mcts",
+        "num_searches": 100
       }
     },
     {
@@ -85,8 +52,19 @@
         "num_searches": 100
       },
       "black": {
-        "agent": "alphazero",
-        "training_data": "120/8/500"
+        "agent": "minimax",
+        "evaluator": "two_in_a_row"
+      }
+    },
+    {
+      "random_start": false,
+      "white": {
+        "agent": "minimax",
+        "evaluator": "two_in_a_row"
+      },
+      "black": {
+        "agent": "mcts",
+        "num_searches": 300
       }
     },
     {
@@ -96,8 +74,19 @@
         "num_searches": 300
       },
       "black": {
-        "agent": "alphazero",
-        "training_data": "120/8/500"
+        "agent": "minimax",
+        "evaluator": "two_in_a_row"
+      }
+    },
+    {
+      "random_start": false,
+      "white": {
+        "agent": "minimax",
+        "evaluator": "two_in_a_row"
+      },
+      "black": {
+        "agent": "mcts",
+        "num_searches": 1000
       }
     },
     {
@@ -107,8 +96,8 @@
         "num_searches": 1000
       },
       "black": {
-        "agent": "alphazero",
-        "training_data": "120/8/500"
+        "agent": "minimax",
+        "evaluator": "two_in_a_row"
       }
     }
   ]

@@ -1,15 +1,255 @@
-{"white_player": {"agent": "alphazero", "training_data": "60/3/500"}, "black_player": {"agent": "mcts", "num_searches": 100}, "number_of_games": 40, "average_moves_per_game": 22, "white_time_per_move": 3.22763317475939, "black_time_per_move": 0.6372371548494415, "white_wins": 37, "black_wins": 3, "draws": 0}
-{"white_player": {"agent": "mcts", "num_searches": 100}, "black_player": {"agent": "alphazero", "training_data": "60/3/500"}, "number_of_games": 40, "average_moves_per_game": 23, "white_time_per_move": 0.6120152134276833, "black_time_per_move": 2.887711214719956, "white_wins": 13, "black_wins": 21, "draws": 6}
-{"white_player": {"agent": "alphazero", "training_data": "60/3/500"}, "black_player": {"agent": "mcts", "num_searches": 300}, "number_of_games": 40, "average_moves_per_game": 22, "white_time_per_move": 3.182906260656998, "black_time_per_move": 1.7940444779708395, "white_wins": 24, "black_wins": 13, "draws": 3}
-{"white_player": {"agent": "mcts", "num_searches": 300}, "black_player": {"agent": "alphazero", "training_data": "60/3/500"}, "number_of_games": 40, "average_moves_per_game": 24, "white_time_per_move": 1.6681441733055191, "black_time_per_move": 2.997702493034378, "white_wins": 16, "black_wins": 17, "draws": 7}
-{"white_player": {"agent": "alphazero", "training_data": "60/3/500"}, "black_player": {"agent": "mcts", "num_searches": 1000}, "number_of_games": 40, "average_moves_per_game": 25, "white_time_per_move": 3.1675012989799574, "black_time_per_move": 5.302781423247687, "white_wins": 13, "black_wins": 22, "draws": 5}
-{"white_player": {"agent": "mcts", "num_searches": 1000}, "black_player": {"agent": "alphazero", "training_data": "60/3/500"}, "number_of_games": 40, "average_moves_per_game": 24, "white_time_per_move": 5.295603538612764, "black_time_per_move": 3.0391650367453393, "white_wins": 26, "black_wins": 8, "draws": 6}
-{"white_player": {"agent": "alphazero", "training_data": "360/8/500"}, "black_player": {"agent": "mcts", "num_searches": 100}, "number_of_games": 40, "average_moves_per_game": 20, "white_time_per_move": 3.078336113560809, "black_time_per_move": 0.6519877945419645, "white_wins": 35, "black_wins": 3, "draws": 2}
-{"white_player": {"agent": "mcts", "num_searches": 100}, "black_player": {"agent": "alphazero", "training_data": "360/8/500"}, "number_of_games": 40, "average_moves_per_game": 23, "white_time_per_move": 0.6251849599484441, "black_time_per_move": 3.0615664977254644, "white_wins": 12, "black_wins": 23, "draws": 5}
-{"white_player": {"agent": "alphazero", "training_data": "360/8/500"}, "black_player": {"agent": "mcts", "num_searches": 300}, "number_of_games": 40, "average_moves_per_game": 22, "white_time_per_move": 3.048794899406014, "black_time_per_move": 1.8070752390138396, "white_wins": 27, "black_wins": 9, "draws": 4}
-{"white_player": {"agent": "mcts", "num_searches": 300}, "black_player": {"agent": "alphazero", "training_data": "360/8/500"}, "number_of_games": 40, "average_moves_per_game": 24, "white_time_per_move": 1.68243551829931, "black_time_per_move": 2.9807591606193866, "white_wins": 20, "black_wins": 14, "draws": 6}
-{"white_player": {"agent": "alphazero", "training_data": "360/8/500"}, "black_player": {"agent": "mcts", "num_searches": 1000}, "number_of_games": 40, "average_moves_per_game": 24, "white_time_per_move": 2.9754734736884045, "black_time_per_move": 5.294029304164206, "white_wins": 21, "black_wins": 15, "draws": 4}
-{"white_player": {"agent": "mcts", "num_searches": 1000}, "black_player": {"agent": "alphazero", "training_data": "360/8/500"}, "number_of_games": 40, "average_moves_per_game": 24, "white_time_per_move": 5.320779092369541, "black_time_per_move": 2.9965830190527822, "white_wins": 20, "black_wins": 12, "draws": 8}
-{"white_player": {"agent": "mcts", "num_searches": 100}, "black_player": {"agent": "mcts", "num_searches": 100}, "number_of_games": 40, "average_moves_per_game": 22, "white_time_per_move": 0.6470281223591223, "black_time_per_move": 0.634493598591984, "white_wins": 21, "black_wins": 16, "draws": 3}
-{"white_player": {"agent": "mcts", "num_searches": 300}, "black_player": {"agent": "mcts", "num_searches": 300}, "number_of_games": 40, "average_moves_per_game": 22, "white_time_per_move": 1.8490930053320798, "black_time_per_move": 1.825892786546187, "white_wins": 27, "black_wins": 9, "draws": 4}
-{"white_player": {"agent": "mcts", "num_searches": 1000}, "black_player": {"agent": "mcts", "num_searches": 1000}, "number_of_games": 40, "average_moves_per_game": 22, "white_time_per_move": 5.622867724566804, "black_time_per_move": 5.563480497710814, "white_wins": 26, "black_wins": 11, "draws": 3}
+{
+  "white_player": {
+    "agent": "alphazero",
+    "training_data": "60/3/500"
+  },
+  "black_player": {
+    "agent": "mcts",
+    "num_searches": 100
+  },
+  "number_of_games": 40,
+  "average_moves_per_game": 22,
+  "white_time_per_move": 3.22763317475939,
+  "black_time_per_move": 0.6372371548494415,
+  "white_wins": 37,
+  "black_wins": 3,
+  "draws": 0
+}
+{
+  "white_player": {
+    "agent": "mcts",
+    "num_searches": 100
+  },
+  "black_player": {
+    "agent": "alphazero",
+    "training_data": "60/3/500"
+  },
+  "number_of_games": 40,
+  "average_moves_per_game": 23,
+  "white_time_per_move": 0.6120152134276833,
+  "black_time_per_move": 2.887711214719956,
+  "white_wins": 13,
+  "black_wins": 21,
+  "draws": 6
+}
+{
+  "white_player": {
+    "agent": "alphazero",
+    "training_data": "60/3/500"
+  },
+  "black_player": {
+    "agent": "mcts",
+    "num_searches": 300
+  },
+  "number_of_games": 40,
+  "average_moves_per_game": 22,
+  "white_time_per_move": 3.182906260656998,
+  "black_time_per_move": 1.7940444779708395,
+  "white_wins": 24,
+  "black_wins": 13,
+  "draws": 3
+}
+{
+  "white_player": {
+    "agent": "mcts",
+    "num_searches": 300
+  },
+  "black_player": {
+    "agent": "alphazero",
+    "training_data": "60/3/500"
+  },
+  "number_of_games": 40,
+  "average_moves_per_game": 24,
+  "white_time_per_move": 1.6681441733055191,
+  "black_time_per_move": 2.997702493034378,
+  "white_wins": 16,
+  "black_wins": 17,
+  "draws": 7
+}
+{
+  "white_player": {
+    "agent": "alphazero",
+    "training_data": "60/3/500"
+  },
+  "black_player": {
+    "agent": "mcts",
+    "num_searches": 1000
+  },
+  "number_of_games": 40,
+  "average_moves_per_game": 25,
+  "white_time_per_move": 3.1675012989799574,
+  "black_time_per_move": 5.302781423247687,
+  "white_wins": 13,
+  "black_wins": 22,
+  "draws": 5
+}
+{
+  "white_player": {
+    "agent": "mcts",
+    "num_searches": 1000
+  },
+  "black_player": {
+    "agent": "alphazero",
+    "training_data": "60/3/500"
+  },
+  "number_of_games": 40,
+  "average_moves_per_game": 24,
+  "white_time_per_move": 5.295603538612764,
+  "black_time_per_move": 3.0391650367453393,
+  "white_wins": 26,
+  "black_wins": 8,
+  "draws": 6
+}
+{
+  "white_player": {
+    "agent": "alphazero",
+    "training_data": "360/8/500"
+  },
+  "black_player": {
+    "agent": "mcts",
+    "num_searches": 100
+  },
+  "number_of_games": 40,
+  "average_moves_per_game": 20,
+  "white_time_per_move": 3.078336113560809,
+  "black_time_per_move": 0.6519877945419645,
+  "white_wins": 35,
+  "black_wins": 3,
+  "draws": 2
+}
+{
+  "white_player": {
+    "agent": "mcts",
+    "num_searches": 100
+  },
+  "black_player": {
+    "agent": "alphazero",
+    "training_data": "360/8/500"
+  },
+  "number_of_games": 40,
+  "average_moves_per_game": 23,
+  "white_time_per_move": 0.6251849599484441,
+  "black_time_per_move": 3.0615664977254644,
+  "white_wins": 12,
+  "black_wins": 23,
+  "draws": 5
+}
+{
+  "white_player": {
+    "agent": "alphazero",
+    "training_data": "360/8/500"
+  },
+  "black_player": {
+    "agent": "mcts",
+    "num_searches": 300
+  },
+  "number_of_games": 40,
+  "average_moves_per_game": 22,
+  "white_time_per_move": 3.048794899406014,
+  "black_time_per_move": 1.8070752390138396,
+  "white_wins": 27,
+  "black_wins": 9,
+  "draws": 4
+}
+{
+  "white_player": {
+    "agent": "mcts",
+    "num_searches": 300
+  },
+  "black_player": {
+    "agent": "alphazero",
+    "training_data": "360/8/500"
+  },
+  "number_of_games": 40,
+  "average_moves_per_game": 24,
+  "white_time_per_move": 1.68243551829931,
+  "black_time_per_move": 2.9807591606193866,
+  "white_wins": 20,
+  "black_wins": 14,
+  "draws": 6
+}
+{
+  "white_player": {
+    "agent": "alphazero",
+    "training_data": "360/8/500"
+  },
+  "black_player": {
+    "agent": "mcts",
+    "num_searches": 1000
+  },
+  "number_of_games": 40,
+  "average_moves_per_game": 24,
+  "white_time_per_move": 2.9754734736884045,
+  "black_time_per_move": 5.294029304164206,
+  "white_wins": 21,
+  "black_wins": 15,
+  "draws": 4
+}
+{
+  "white_player": {
+    "agent": "mcts",
+    "num_searches": 1000
+  },
+  "black_player": {
+    "agent": "alphazero",
+    "training_data": "360/8/500"
+  },
+  "number_of_games": 40,
+  "average_moves_per_game": 24,
+  "white_time_per_move": 5.320779092369541,
+  "black_time_per_move": 2.9965830190527822,
+  "white_wins": 20,
+  "black_wins": 12,
+  "draws": 8
+}
+{
+  "white_player": {
+    "agent": "mcts",
+    "num_searches": 100
+  },
+  "black_player": {
+    "agent": "mcts",
+    "num_searches": 100
+  },
+  "number_of_games": 40,
+  "average_moves_per_game": 22,
+  "white_time_per_move": 0.6470281223591223,
+  "black_time_per_move": 0.634493598591984,
+  "white_wins": 21,
+  "black_wins": 16,
+  "draws": 3
+}
+{
+  "white_player": {
+    "agent": "mcts",
+    "num_searches": 300
+  },
+  "black_player": {
+    "agent": "mcts",
+    "num_searches": 300
+  },
+  "number_of_games": 40,
+  "average_moves_per_game": 22,
+  "white_time_per_move": 1.8490930053320798,
+  "black_time_per_move": 1.825892786546187,
+  "white_wins": 27,
+  "black_wins": 9,
+  "draws": 4
+}
+{
+  "white_player": {
+    "agent": "mcts",
+    "num_searches": 1000
+  },
+  "black_player": {
+    "agent": "mcts",
+    "num_searches": 1000
+  },
+  "number_of_games": 40,
+  "average_moves_per_game": 22,
+  "white_time_per_move": 5.622867724566804,
+  "black_time_per_move": 5.563480497710814,
+  "white_wins": 26,
+  "black_wins": 11,
+  "draws": 3
+}

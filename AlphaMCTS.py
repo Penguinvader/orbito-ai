@@ -13,20 +13,15 @@ class AlphaMCTS:
     @torch.no_grad()
     def search(self, state):
         root = Node(self.args, state, visit_count=1)
-
         policy, _ = self.model(
             torch.tensor(state.get_encoded_state(), device=self.model.device).unsqueeze(0)
         )
         policy = torch.softmax(policy, dim=1).squeeze(0).cpu().numpy()
-
         policy = ((1 - self.args['dirichlet_epsilon']) * policy + self.args['dirichlet_epsilon'] *
                   np.random.dirichlet([self.args['dirichlet_alpha']] * len(state.moves)))
-
         valid_moves = state.legal_moves_numeric()
         policy *= valid_moves
-
         policy /= np.sum(policy)
-        # fill out root.children completely
         root.expand(policy)
 
         for search in range(self.args['num_searches']):

@@ -133,12 +133,12 @@ def play_games(white_player, black_player, games, random_start):
     }
     print()
     print(result)
-    with open('results_mini2.txt', 'a') as result_file:
+    with open('results_mctsfix.txt', 'a') as result_file:
         json.dump(result, result_file)
         result_file.write('\n')
 
 
-rc = json.load(open('run_configuration_5.json'))
+rc = json.load(open('run_configuration.json'))
 for p in rc['players']:
     play_games(get_player(p['white']),
                get_player(p['black']),

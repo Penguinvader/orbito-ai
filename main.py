@@ -40,7 +40,7 @@ if __name__ == '__main__':
     # 1: random, 2: mcts, 3: alpha_mcts1 4: alpha_mcts2 5: minimax
     p1_mode = 0
     p2_mode = 3
-    basic_mcts = MCTS({'num_searches': 1000, 'C': 1.41})
+    basic_mcts = MCTS({'num_searches': 100, 'C': 1.41})
     model = ResNet(a, 9, 128, device)
     model.load_state_dict(torch.load('models/search_120_it_8_selfplay_500_epochs4_temp1.25_eps0.25_alpha0.3/model_7.pt', map_location=device))
     mcts = AlphaMCTS({'num_searches': 1000, 'C': 1.41, 'dirichlet_epsilon': 0., 'dirichlet_alpha': 0.3}, model)
@@ -73,7 +73,7 @@ if __name__ == '__main__':
     model2.eval()
 
     try:
-        for i in range(20):
+        for i in range(2):
             random_moves = 0
             a = State()
             # a.h0 = 1
@@ -117,7 +117,7 @@ if __name__ == '__main__':
                         print(a.moves[move])
                         a.make_move(move)
                     elif player == 'white' and p1_mode == 5 or player == 'black' and p2_mode == 5:
-                        mm = minimax.minimax(a, 2, 1, evaluator=evaluators.two_in_a_row)
+                        mm = minimax.minimax(a, 2, 1, evaluator=evaluators.win)
                         move = mm[1]
                         print(mm)
                         a.make_move_text(move)
